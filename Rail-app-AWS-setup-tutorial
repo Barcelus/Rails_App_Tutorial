@@ -27,3 +27,4 @@ Press **Launch instances**:
 	(uzupełnić tworzenie key pair)
 + Under **Network settings**:
 	+ Select the VPC created in step 1.1
+	+ test
