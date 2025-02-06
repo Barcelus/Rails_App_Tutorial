@@ -14,7 +14,7 @@ Notice that protocol and port range is selected automatically based on the type 
 Press **Create security group**, your Security Group is now created
 
 3. Create and configure your AWS account
->(uzupełnić jeżeli nie ma usera)
+>(uzupełnić jeżeli nie ma usera)  
 >(uzupełnić - stwórz access key)
 
 4. Setup AWS CLI (Command Line Interface)
