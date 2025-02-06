@@ -29,4 +29,31 @@ Press **Launch instances**:
 	(uzupełnić tworzenie key pair)
 + Under **Network settings**:
 	+ Select the VPC created in step 1.1
-	+ test
+	
+# Head1
+## Head
+### Head
+#### Head
+
+> nested
+>> nested
+1. list
+2. still list
+    1. nested list
+    1. still list
+
+text
+*****
+text
+______
+text
+
+==highlighted text==
+
+`code line`
+
+```code block
+still block
+```
+
+
