@@ -1,4 +1,4 @@
-# Setup your AWS account
+### Setup your AWS account
 1. Create your AWS VPC 
 Create your own VPC (search VPC in AWS Home searchbox), 
 (uzupełnić)
@@ -19,7 +19,7 @@ Press **Create security group**, your Security Group is now created
 
 4. Setup AWS CLI (Command Line Interface)
 (uzupełnić)
-#  Launch an EC2 instance fo your app
+###  Launch an EC2 instance fo your app
 In AWS Home, go to EC2 -> Instances. In the upper right corner select a region (e.g. "eu-north-1")
 Press **Launch instances**:
 + Type a name for your instance (e..g "Development Demo")
@@ -41,6 +41,7 @@ Press **Launch instances**:
 2. still list
     1. nested list
     1. still list
+        1. even more nested?
 
 text
 *****
@@ -48,11 +49,12 @@ text
 ______
 text
 
-==highlighted text==
+<mark>highlighted text</mark>
 
 `code line`
 
-```code block
+```
+code block
 still block
 ```
 
