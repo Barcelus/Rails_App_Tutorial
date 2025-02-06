@@ -1,7 +1,7 @@
 ### Setup your AWS account
 1. Create your AWS VPC 
 Create your own VPC (search VPC in AWS Home searchbox), 
-(uzupełnić)
+>(uzupełnić)
 
 2. Setup your security group
 Go to EC2 -> Security Groups, then select **Create Security Group**  
@@ -14,11 +14,12 @@ Notice that protocol and port range is selected automatically based on the type 
 Press **Create security group**, your Security Group is now created
 
 3. Create and configure your AWS account
-(uzupełnić jeżeli nie ma usera)
-(uzupełnić - stwórz access key)
+>(uzupełnić jeżeli nie ma usera)
+>(uzupełnić - stwórz access key)
 
 4. Setup AWS CLI (Command Line Interface)
-(uzupełnić)
+>(uzupełnić)
+
 ###  Launch an EC2 instance fo your app
 In AWS Home, go to EC2 -> Instances. In the upper right corner select a region (e.g. "eu-north-1")
 Press **Launch instances**:
@@ -29,6 +30,8 @@ Press **Launch instances**:
 	(uzupełnić tworzenie key pair)
 + Under **Network settings**:
 	+ Select the VPC created in step 1.1
+
+
 	
 # Head1
 ## Head
