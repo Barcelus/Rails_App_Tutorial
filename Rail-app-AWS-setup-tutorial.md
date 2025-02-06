@@ -10,8 +10,8 @@
 	+ Type: **HTTP**; Source: **Anywhere IPv4** (leave all other fields as default)  
 	+ Type: **HTTPS**; Source: **Anywhere IPv4** (leave all other fields as default)  
 	  
-	Notice that protocol and port range is selected automatically based on the type of the inboudn rule.
-	Press **Create security group**, your Security Group is now created
+    	Notice that protocol and port range is selected automatically based on the type of the inboudn rule.
+	    Press **Create security group**, your Security Group is now created
 	3. Create and configure your AWS account
 	(uzupełnić jeżeli nie ma usera)
 	(uzupełnić - stwórz access key)
