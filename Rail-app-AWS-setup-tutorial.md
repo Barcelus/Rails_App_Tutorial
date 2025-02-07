@@ -1,11 +1,11 @@
 ### 1. Setup your AWS account
-1. Create your AWS VPC
+1. Create your AWS VPC  
 Create your own VPC (search VPC in AWS Home searchbox),
 > uzupełnić
 
-2. Setup your security group
-Go to EC2 -> Security Groups, then select **Create Security Group**
-Input your Secuity Group name and description (e.g. "Security Group 1", "Development Demo")
+2. Setup your security group  
+Go to EC2 -> Security Groups, then select **Create Security Group**  
+Input your Secuity Group name and description (e.g. "Security Group 1", "Development Demo")  
 Under **Inbound Rules** add 3 new rules:
 + Type: **SSH**; Source: **Anywhere IPv4** (leave all other fields as default)
 + Type: **HTTP**; Source: **Anywhere IPv4** (leave all other fields as default)
@@ -21,7 +21,7 @@ Press **Create security group**, your Security Group is now created
 > uzupełnić
 
 ### 2. Launch an EC2 instance fo your app
-In AWS Home, go to **EC2 -> Instances**. In the upper right corner select a region (e.g. "eu-north-1")
+In AWS Home, go to **EC2 -> Instances**. In the upper right corner select a region (e.g. "eu-north-1")  
 Press **Launch instances**:
 + Type a name for your instance (e..g "Development Demo")
 + Under **Amazon Machine Image**, select **Ubuntu**, then **Ubuntu 24.04** (or newer)
@@ -34,8 +34,8 @@ Press **Launch instances**:
 	+ Select the security group created in step 1.2
 + Under **Configure storage**, select at least 15GB of memory for your instance
 
-Leave all other options as default.
-Press the **Launch instance** button. After that, go to **EC2 -> Instances -> Instances** and verify that your instance is launched and running.
+Leave all other options as default.  
+Press the **Launch instance** button. After that, go to **EC2 -> Instances -> Instances** and verify that your instance is launched and running.  
 Instance is operational when it's **Instance state** is ***Running*** and under **Status check** there is ***3/3 checks passed***.
 
 In the next chapter, you will configure your instance to run your Rails app.
