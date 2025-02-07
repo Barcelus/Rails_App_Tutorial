@@ -142,35 +142,3 @@ Remember to input your EC2 public IP adress in the designated place
 2. Launch Puma application server
 3. See your app running
 4. (optional) Setup Public Elastic IP and assing it to your EC2 instance
-
-# Head1
-## Head
-### Head
-#### Head
-
-> nested
->> nested
-1. list
-2. still list
-    1. nested list
-    1. still list
-        1. even more nested?
-            1. nestingception?
-                1. now it's just stupid
-                    1. surely it wont work that far
-text
-*****
-text
-______
-text
-
-<mark>highlighted text</mark>
-
-`code line`
-
-```
-code block
-still block
-```
-
-
