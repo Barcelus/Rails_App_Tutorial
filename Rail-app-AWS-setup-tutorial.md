@@ -3,6 +3,9 @@
 Create your own VPC (search VPC in AWS Home searchbox),
 > uzupełnić
 
+test  test
+test <br> test
+
 2. Setup your security group  
    Go to EC2 -> Security Groups, then select **Create Security Group**  
    Input your Secuity Group name and description (e.g. "Security Group 1", "Development Demo")  
