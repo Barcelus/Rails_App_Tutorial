@@ -42,12 +42,12 @@ In the next chapter, you will configure your instance to run your Rails app.
 
 ### 3. Setup your EC2 instance
 1. Connect to your instance using terminal
-1. Install rbenv
-2. Install Ruby (using rbenv)
-3. Install database - SQLite3
-4. Install Rails
-5. Install and configure git
-6. Install and configure NGINX  
+2. Install rbenv
+3. Install Ruby (using rbenv)
+4. Install database - SQLite3
+5. Install Rails
+6. Install and configure git
+7. Install and configure NGINX  
 NGINX should be already installed on your host, however, verfity by running:  
 `sudo apt install nginx`  
 After that, go to `/etc/nginx` folder and create a `nginx.conf` file:
@@ -69,20 +69,20 @@ events {
 
 http {
 	server {
-	    listen 80; # Listen on port 80 for HTTP
-	    server_name <mark>sdfds </mark>3.61.2.165; # Replace with your domain or IP
+		listen 80; # Listen on port 80 for HTTP
+		server_name YOUR_EC2_PUBLIC_IP; # Replace with your domain or IP
 
-	    root /var/www/html; # Path to your website files
-	    index index.html index.htm; # Default index files
+		root /var/www/html; # Path to your website files
+		index index.html index.htm; # Default index files
 
 	location / {
-		proxy_pass http://127.0.0.1:3000;  # Forward requests to Puma on port 3000
+		proxy_pass http://127.0.0.1:3000; # Forward requests to Puma on port 3000
 		proxy_http_version 1.1;
 		proxy_set_header Upgrade $http_upgrade;
 		proxy_set_header Connection 'upgrade';
 		proxy_set_header Host $host;
 		proxy_cache_bypass $http_upgrade;
-	    }
+		}
 	}
 	##
 	# Basic Settings
@@ -133,33 +133,13 @@ http {
 	include /etc/nginx/sites-enabled/*;
 }
 
-
-#mail {
-#	# See sample authentication script at:
-#	# http://wiki.nginx.org/ImapAuthenticateWithApachePhpScript
-#
-#	# auth_http localhost/auth.php;
-#	# pop3_capabilities "TOP" "USER";
-#	# imap_capabilities "IMAP4rev1" "UIDPLUS";
-#
-#	server {
-#		listen     localhost:110;
-#		protocol   pop3;
-#		proxy      on;
-#	}
-#
-#	server {
-#		listen     localhost:143;
-#		protocol   imap;
-#		proxy      on;
-#	}
-#}
 ```
+Remember to input your EC2 public IP adress in the designated place
 
 ### 4. Launch your app
 1. Download your app repository from github
 2. Launch Puma application server
-3. Connect to your application
+3. See your app running
 4. (optional) Setup Public Elastic IP and assing it to your EC2 instance
 
 # Head1
