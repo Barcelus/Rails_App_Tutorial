@@ -1,31 +1,28 @@
 ### 1. Setup your AWS account
-1. Create your AWS VPC  
+1. Create your AWS VPC<br>
 Create your own VPC (search VPC in AWS Home searchbox),
 > uzupełnić
 
-test  test
-test <br> test
-
-2. Setup your security group  
-   Go to EC2 -> Security Groups, then select **Create Security Group**  
-   Input your Secuity Group name and description (e.g. "Security Group 1", "Development Demo")  
+2. Setup your security group<br>
+   Go to EC2 -> Security Groups, then select **Create Security Group**<br>
+   Input your Secuity Group name and description (e.g. "Security Group 1", "Development Demo")<br>
    Under **Inbound Rules** add 3 new rules:
 + Type: **SSH**; Source: **Anywhere IPv4** (leave all other fields as default)
 + Type: **HTTP**; Source: **Anywhere IPv4** (leave all other fields as default)
-+ Type: **HTTPS**; Source: **Anywhere IPv4** (leave all other fields as default)  
++ Type: **HTTPS**; Source: **Anywhere IPv4** (leave all other fields as default)<br>
  
    Notice that protocol and port range is selected automatically based on the type of the inbound rule.
    Press **Create security group**, your Security Group is now created
 
 3. Create and configure your AWS account
-> uzupełnić jeżeli nie ma usera  
+> uzupełnić jeżeli nie ma usera<br>
 > uzupełnić - stwórz access key
 
 4. Setup AWS CLI (Command Line Interface)
 > uzupełnić
 
 ### 2. Launch an EC2 instance fo your app
-In AWS Home, go to **EC2 -> Instances**. In the upper right corner select a region (e.g. "eu-north-1")  
+In AWS Home, go to **EC2 -> Instances**. In the upper right corner select a region (e.g. "eu-north-1")<br>
 Press **Launch instances**:
 + Type a name for your instance (e..g "Development Demo")
 + Under **Amazon Machine Image**, select **Ubuntu**, then **Ubuntu 24.04** (or newer)
@@ -38,8 +35,8 @@ Press **Launch instances**:
 	+ Select the security group created in step 1.2
 + Under **Configure storage**, select at least 15GB of memory for your instance
 
-Leave all other options as default.  
-Press the **Launch instance** button. After that, go to **EC2 -> Instances -> Instances** and verify that your instance is launched and running.  
+Leave all other options as default.<br>
+Press the **Launch instance** button. After that, go to **EC2 -> Instances -> Instances** and verify that your instance is launched and running.<br>
 Instance is operational when it's **Instance state** is ***Running*** and under **Status check** there is ***3/3 checks passed***.
 
 In the next chapter, you will configure your instance to run your Rails app.
@@ -52,8 +49,8 @@ In the next chapter, you will configure your instance to run your Rails app.
 5. Install Rails
 6. Install and configure git
 7. Install and configure NGINX  
-NGINX should be already installed on your host, however, verfity by running:  
-`sudo apt install nginx`  
+NGINX should be already installed on your host, however, verfity by running:<br>
+`sudo apt install nginx`<br>
 After that, go to `/etc/nginx` folder and create a `nginx.conf` file:
 ```
 sudo touch nginx.conf
