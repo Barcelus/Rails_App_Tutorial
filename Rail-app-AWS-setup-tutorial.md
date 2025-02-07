@@ -36,7 +36,7 @@ Press **Launch instances**:
 
 Leave all other options as default.
 Press the **Launch instance** button. After that, go to **EC2 -> Instances -> Instances** and verify that your instance is launched and running.
-Instance is operational when it's **Instance state** is ***Running*** and under **Status check** there is ***3/3 checks passed***
+Instance is operational when it's **Instance state** is ***Running*** and under **Status check** there is ***3/3 checks passed***.
 
 In the next chapter, you will configure your instance to run your Rails app.
 
