@@ -70,7 +70,7 @@ events {
 http {
 	server {
 	    listen 80; # Listen on port 80 for HTTP
-	    server_name 13.61.2.165; # Replace with your domain or IP
+	    server_name <mark>sdfds </mark>3.61.2.165; # Replace with your domain or IP
 
 	    root /var/www/html; # Path to your website files
 	    index index.html index.htm; # Default index files
