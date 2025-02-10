@@ -53,26 +53,26 @@ In the next chapter, you will configure your instance to run your Rails app.
 > ^ w którym kroku to potrzebne?
 
 
-3. Install Ruby (using rbenv)
-`rbenv install 3.3.4`
-`rbenv global 3.3.4`
-`rbenv local 3.3.4`
-`ruby --version`
-4. Install database - SQLite3
-`sudo apt-get update`
-`sudo apt install sqlite3`
-`sqlite3 sharks.db`
+3. Install Ruby (using rbenv)<br>
+`rbenv install 3.3.4`<br>
+`rbenv global 3.3.4`<br>
+`rbenv local 3.3.4`<br>
+`ruby --version`<br>
+4. Install database - SQLite3<br>
+`sudo apt-get update`<br>
+`sudo apt install sqlite3`<br>
+`sqlite3 sharks.db`<br>
 > ^na pewno SQLlite3?
-5. Install Rails
-6. Install and configure git
-`ssh-keygen -t ed255119 -C "barcelus@mths.ca"`
-`git config -global color.ui true`
-`git config --global color.ui true`
-`git config --global user.name "Barcelus"`
-`git config --global user.email "bartlomiejkyziol@gmailcom"`
-`ssh-keygen -t ed25519 -C "bartlomiejkyziol@gmail.com"`
+5. Install Rails<br>
+6. Install and configure git<br>
+`ssh-keygen -t ed255119 -C "barcelus@mths.ca"`<br>
+`git config -global color.ui true`<br>
+`git config --global color.ui true`<br>
+`git config --global user.name "Barcelus"`<br>
+`git config --global user.email "bartlomiejkyziol@gmailcom"`<br>
+`ssh-keygen -t ed25519 -C "bartlomiejkyziol@gmail.com"`<br>
 > sprawdź!!!
-7. Install and configure NGINX  
+7. Install and configure NGINX<br>
 NGINX should be already installed on your host, however, verfity by running:<br>
 `sudo apt install nginx`<br>
 After that, go to `/etc/nginx` folder and create a `nginx.conf` file:
