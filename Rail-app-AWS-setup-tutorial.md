@@ -76,7 +76,7 @@ In the next chapter, you will configure your instance to run your Rails app.
 NGINX should be already installed on your host, however, verfity by running:<br>
 `sudo apt install nginx`<br>
 After that, go to `/etc/nginx` folder and create a `nginx.conf` file:<br>
-'sudo touch nginx.conf`<br>
+`sudo touch nginx.conf`<br>
 Open that file with a text editor (e.g. vim) and paste the following:
 ```
 user www-data;
@@ -163,7 +163,7 @@ Remember to modify the nginx.conf file permissions (chmod 777)
 
 ### 4. Launch your app
 1. Download your app repository from github
-2. Launch Puma application server
+2. Launch Puma application server<br>
 `bundle exec rails server -b 0.0.0.0`
 > zapisz jak zatrzymać (sigkill) - htop > kill -9 PROCESS_ID_NO
 
