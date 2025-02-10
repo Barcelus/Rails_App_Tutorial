@@ -43,12 +43,12 @@ In the next chapter, you will configure your instance to run your Rails app.
 
 ### 3. Setup your EC2 instance
 1. Connect to your instance using terminal
-2. Install rbenv
-`sudo apt-get update`
-`sudo apt install rbenv`
-> ^to chyba nie działa, install przez git clone
-`sudo apt-get install autoconf patch build-essential rustc libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libgmp-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev uuid-dev`
-> ^ w którym kroku to potrzebne?
+2. Install rbenv<br>
+`sudo apt-get update`<br>
+`sudo apt install rbenv`<br>
+> ^to chyba nie działa, install przez git clone<br>
+`sudo apt-get install autoconf patch build-essential rustc libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libgmp-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev uuid-dev`<br>
+> ^ w którym kroku to potrzebne?<br>
 3. Install Ruby (using rbenv)
 `rbenv install 3.3.4`
 `rbenv global 3.3.4`
