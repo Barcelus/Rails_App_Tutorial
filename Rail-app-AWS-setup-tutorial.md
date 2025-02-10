@@ -44,10 +44,30 @@ In the next chapter, you will configure your instance to run your Rails app.
 ### 3. Setup your EC2 instance
 1. Connect to your instance using terminal
 2. Install rbenv
+`sudo apt-get update`
+`sudo apt install rbenv`
+> ^to chyba nie działa, install przez git clone
+`sudo apt-get install autoconf patch build-essential rustc libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libgmp-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev uuid-dev`
+> ^ w którym kroku to potrzebne?
 3. Install Ruby (using rbenv)
+`rbenv install 3.3.4`
+`rbenv global 3.3.4`
+`rbenv local 3.3.4`
+`ruby --version`
 4. Install database - SQLite3
+`sudo apt-get update`
+`sudo apt install sqlite3`
+`sqlite3 sharks.db`
+> ^na pewno SQLlite3?
 5. Install Rails
 6. Install and configure git
+`ssh-keygen -t ed255119 -C "barcelus@mths.ca"`
+`git config -global color.ui true`
+`git config --global color.ui true`
+`git config --global user.name "Barcelus"`
+`git config --global user.email "bartlomiejkyziol@gmailcom"`
+`ssh-keygen -t ed25519 -C "bartlomiejkyziol@gmail.com"`
+> sprawdź!!!
 7. Install and configure NGINX  
 NGINX should be already installed on your host, however, verfity by running:<br>
 `sudo apt install nginx`<br>
@@ -137,8 +157,13 @@ http {
 ```
 Remember to input your EC2 public IP adress in the designated place
 
+Remember to modify the nginx.conf file permissions (chmod 777)
+
 ### 4. Launch your app
 1. Download your app repository from github
 2. Launch Puma application server
+`bundle exec rails server -b 0.0.0.0`
+> zapisz jak zatrzymać (sigkill) - htop > kill -9 PROCESS_ID_NO
+
 3. See your app running
 4. (optional) Setup Public Elastic IP and assing it to your EC2 instance
