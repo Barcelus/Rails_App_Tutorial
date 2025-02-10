@@ -69,16 +69,14 @@ In the next chapter, you will configure your instance to run your Rails app.
 `git config -global color.ui true`<br>
 `git config --global color.ui true`<br>
 `git config --global user.name "Barcelus"`<br>
-`git config --global user.email "bartlomiejkyziol@gmailcom"`<br>
+`git config --global user.email "bartlomiejkyziol@gmail.com"`<br>
 `ssh-keygen -t ed25519 -C "bartlomiejkyziol@gmail.com"`<br>
 > sprawdź!!!
 7. Install and configure NGINX<br>
 NGINX should be already installed on your host, however, verfity by running:<br>
 `sudo apt install nginx`<br>
-After that, go to `/etc/nginx` folder and create a `nginx.conf` file:
-```
-sudo touch nginx.conf
-```
+After that, go to `/etc/nginx` folder and create a `nginx.conf` file:<br>
+'sudo touch nginx.conf`<br>
 Open that file with a text editor (e.g. vim) and paste the following:
 ```
 user www-data;
