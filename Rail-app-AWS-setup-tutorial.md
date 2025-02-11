@@ -48,7 +48,7 @@ Input the following command:<br>
 Substitute the `EC2_INSTANCE_IP` with the public IP adress (or Public DNS).<br>
 Enter `yes` when asked to connect to your instance. If the connection was succesful, you will notice your username will be different - `ubuntu@EC2_INSTANCE_PRIVATE_IP`
 
-If you get a permission error - check permissions of the RailsAppDemoKey.pem, apply `chmod 400` to that file if necessary.
+    If you get a permission error - check permissions of the RailsAppDemoKey.pem, apply `chmod 400` to that file if necessary.
 > sprawdź czy na pewno to był chmod 400
 
 2. Install rbenv<br>
