@@ -1,7 +1,7 @@
 ### 1. Setup your AWS account
 1. Create your AWS VPC<br>
 Create your own VPC (search VPC in AWS Home searchbox),
-> uzupełnić (test)
+> uzupełnić
 
 2. Setup your security group<br>
    Go to EC2 -> Security Groups, then select **Create Security Group**<br>
