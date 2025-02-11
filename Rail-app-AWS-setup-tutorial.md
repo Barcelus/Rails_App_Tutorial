@@ -6,15 +6,15 @@ Create your own VPC (search VPC in AWS Home searchbox),
 
 2. Setup your security group
 
-   Go to EC2 -> Security Groups, then select **Create Security Group**<br>
-   Input your Secuity Group name and description (e.g. "Security Group 1", "RailsAppDemo")<br>
-   Under **Inbound Rules** add 3 new rules:
+Go to EC2 -> Security Groups, then select **Create Security Group**<br>
+Input your Secuity Group name and description (e.g. "Security Group 1", "RailsAppDemo")<br>
+Under **Inbound Rules** add 3 new rules:
 + Type: **SSH**; Source: **Anywhere IPv4** (leave all other fields as default)
 + Type: **HTTP**; Source: **Anywhere IPv4** (leave all other fields as default)
 + Type: **HTTPS**; Source: **Anywhere IPv4** (leave all other fields as default)<br>
  
-   Notice that protocol and port range is selected automatically based on the type of the inbound rule.
-   Press **Create security group**, your Security Group is now created
+Notice that protocol and port range is selected automatically based on the type of the inbound rule.
+Press **Create security group**, your Security Group is now created
 
 3. Create and configure your AWS account
 
@@ -26,8 +26,8 @@ Create your own VPC (search VPC in AWS Home searchbox),
 > uzupełnić
 
 ### 2. Launch an EC2 instance fo your app<br>
-    In AWS Home, go to **EC2 -> Instances**. In the upper right corner select a region (e.g. "eu-north-1")<br>
-    Press **Launch instances**:
+In AWS Home, go to **EC2 -> Instances**. In the upper right corner select a region (e.g. "eu-north-1")<br>
+Press **Launch instances**:
 + Type a name for your instance (e..g RailsAppDemo")
 + Under **Amazon Machine Image**, select **Ubuntu**, then **Ubuntu 24.04** (or newer)
 + Under **Instance type**, select the free tier eligible instance - usually it will be **t3.micro**
@@ -39,21 +39,21 @@ Create your own VPC (search VPC in AWS Home searchbox),
 	+ Select the security group created in step 1.2
 + Under **Configure storage**, select at least 15GB of memory for your instance
 
-    Leave all other options as default.<br>
-    Press the **Launch instance** button. After that, go to **EC2 -> Instances -> Instances** and verify that your instance is launched and running.<br>
-    Instance is operational when it's **Instance state** is ***Running*** and under **Status check** there is ***3/3 checks passed***.
+Leave all other options as default.<br>
+Press the **Launch instance** button. After that, go to **EC2 -> Instances -> Instances** and verify that your instance is launched and running.<br>
+Instance is operational when it's **Instance state** is ***Running*** and under **Status check** there is ***3/3 checks passed***.
 
-    In the next chapter, you will configure your instance to run your Rails app.
+In the next chapter, you will configure your instance to run your Rails app.
 
 ### 3. Setup your EC2 instance
 1. Connect to your instance using terminal
 
-    Input the following command:<br>
+Input the following command:<br>
 `ssh -i .ssh/RailsAppDemoKey.pem ubuntu@EC2_INSTANCE_IP`<br>
-    Substitute the `EC2_INSTANCE_IP` with the public IP adress (or Public DNS).<br>
-    Enter `yes` when asked to connect to your instance. If the connection was succesful, you will notice your username will be different - `ubuntu@EC2_INSTANCE_PRIVATE_IP`
+Substitute the `EC2_INSTANCE_IP` with the public IP adress (or Public DNS).<br>
+Enter `yes` when asked to connect to your instance. If the connection was succesful, you will notice your username will be different - `ubuntu@EC2_INSTANCE_PRIVATE_IP`
 
-    If you get a permission error - check permissions of the RailsAppDemoKey.pem, apply `chmod 400` to that file if necessary.
+If you get a permission error - check permissions of the RailsAppDemoKey.pem, apply `chmod 400` to that file if necessary.
 > sprawdź czy na pewno to był chmod 400
 
 2. Install rbenv
@@ -73,6 +73,7 @@ Create your own VPC (search VPC in AWS Home searchbox),
 `rbenv global 3.3.4`<br>
 `rbenv local 3.3.4`<br>
 `ruby --version`<br>
+
 4. Install database - SQLite3
 
 `sudo apt-get update`<br>
@@ -178,9 +179,9 @@ http {
 }
 
 ```
-    Remember to input your EC2 public IP adress in the designated place
+Remember to input your EC2 public IP adress in the designated place
 
-    Remember to modify the nginx.conf file permissions (chmod 777)
+Remember to modify the nginx.conf file permissions (chmod 777)
 
 ### 4. Launch your app
 1. Download your app repository from github
