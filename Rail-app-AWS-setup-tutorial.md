@@ -1,9 +1,11 @@
 ### 1. Setup your AWS account
-1. Create your AWS VPC<br>
+1. Create your AWS VPC
+
 Create your own VPC (search VPC in AWS Home searchbox),
 > uzupełnić
 
-2. Setup your security group<br>
+2. Setup your security group
+
    Go to EC2 -> Security Groups, then select **Create Security Group**<br>
    Input your Secuity Group name and description (e.g. "Security Group 1", "RailsAppDemo")<br>
    Under **Inbound Rules** add 3 new rules:
@@ -15,15 +17,17 @@ Create your own VPC (search VPC in AWS Home searchbox),
    Press **Create security group**, your Security Group is now created
 
 3. Create and configure your AWS account
+
 > uzupełnić jeżeli nie ma usera<br>
 > uzupełnić - stwórz access key
 
 4. Setup AWS CLI (Command Line Interface)
+
 > uzupełnić
 
 ### 2. Launch an EC2 instance fo your app
-In AWS Home, go to **EC2 -> Instances**. In the upper right corner select a region (e.g. "eu-north-1")<br>
-Press **Launch instances**:
+    In AWS Home, go to **EC2 -> Instances**. In the upper right corner select a region (e.g. "eu-north-1")<br>
+    Press **Launch instances**:
 + Type a name for your instance (e..g RailsAppDemo")
 + Under **Amazon Machine Image**, select **Ubuntu**, then **Ubuntu 24.04** (or newer)
 + Under **Instance type**, select the free tier eligible instance - usually it will be **t3.micro**
@@ -35,14 +39,15 @@ Press **Launch instances**:
 	+ Select the security group created in step 1.2
 + Under **Configure storage**, select at least 15GB of memory for your instance
 
-Leave all other options as default.<br>
-Press the **Launch instance** button. After that, go to **EC2 -> Instances -> Instances** and verify that your instance is launched and running.<br>
-Instance is operational when it's **Instance state** is ***Running*** and under **Status check** there is ***3/3 checks passed***.
+    Leave all other options as default.<br>
+    Press the **Launch instance** button. After that, go to **EC2 -> Instances -> Instances** and verify that your instance is launched and running.<br>
+    Instance is operational when it's **Instance state** is ***Running*** and under **Status check** there is ***3/3 checks passed***.
 
-In the next chapter, you will configure your instance to run your Rails app.
+    In the next chapter, you will configure your instance to run your Rails app.
 
 ### 3. Setup your EC2 instance
-1. Connect to your instance using terminal<br>
+1. Connect to your instance using terminal
+
 Input the following command:<br>
 `ssh -i .ssh/RailsAppDemoKey.pem ubuntu@EC2_INSTANCE_IP`<br>
 Substitute the `EC2_INSTANCE_IP` with the public IP adress (or Public DNS).<br>
@@ -51,7 +56,8 @@ Enter `yes` when asked to connect to your instance. If the connection was succes
     If you get a permission error - check permissions of the RailsAppDemoKey.pem, apply `chmod 400` to that file if necessary.
 > sprawdź czy na pewno to był chmod 400
 
-2. Install rbenv<br>
+2. Install rbenv
+
 `sudo apt-get update`<br>
 `sudo apt install rbenv`<br>
 > ^to chyba nie działa, install przez git clone
@@ -61,18 +67,23 @@ Enter `yes` when asked to connect to your instance. If the connection was succes
 > ^ w którym kroku to potrzebne?
 
 
-3. Install Ruby (using rbenv)<br>
+3. Install Ruby (using rbenv)
+
 `rbenv install 3.3.4`<br>
 `rbenv global 3.3.4`<br>
 `rbenv local 3.3.4`<br>
 `ruby --version`<br>
-4. Install database - SQLite3<br>
+4. Install database - SQLite3
+
 `sudo apt-get update`<br>
 `sudo apt install sqlite3`<br>
 `sqlite3 sharks.db`<br>
 > ^na pewno SQLlite3?
-5. Install Rails<br>
-6. Install and configure git<br>
+
+5. Install Rails
+
+6. Install and configure git
+
 `ssh-keygen -t ed255119 -C "barcelus@mths.ca"`<br>
 `git config -global color.ui true`<br>
 `git config --global color.ui true`<br>
@@ -80,7 +91,9 @@ Enter `yes` when asked to connect to your instance. If the connection was succes
 `git config --global user.email "bartlomiejkyziol@gmail.com"`<br>
 `ssh-keygen -t ed25519 -C "bartlomiejkyziol@gmail.com"`<br>
 > sprawdź!!!
-7. Install and configure NGINX<br>
+
+7. Install and configure NGINX
+
 NGINX should be already installed on your host, however, verfity by running:<br>
 `sudo apt install nginx`<br>
 After that, go to `/etc/nginx` folder and create a `nginx.conf` file:<br>
@@ -165,15 +178,18 @@ http {
 }
 
 ```
-Remember to input your EC2 public IP adress in the designated place
+    Remember to input your EC2 public IP adress in the designated place
 
-Remember to modify the nginx.conf file permissions (chmod 777)
+    Remember to modify the nginx.conf file permissions (chmod 777)
 
 ### 4. Launch your app
 1. Download your app repository from github
-2. Launch Puma application server<br>
+
+2. Launch Puma application server
+
 `bundle exec rails server -b 0.0.0.0`
 > zapisz jak zatrzymać (sigkill) - htop > kill -9 PROCESS_ID_NO
 
 3. See your app running
+
 4. (optional) Setup Public Elastic IP and assing it to your EC2 instance
