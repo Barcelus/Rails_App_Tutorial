@@ -25,7 +25,7 @@ Create your own VPC (search VPC in AWS Home searchbox),
 
 > uzupełnić
 
-### 2. Launch an EC2 instance fo your app
+### 2. Launch an EC2 instance fo your app<br>
     In AWS Home, go to **EC2 -> Instances**. In the upper right corner select a region (e.g. "eu-north-1")<br>
     Press **Launch instances**:
 + Type a name for your instance (e..g RailsAppDemo")
@@ -48,10 +48,10 @@ Create your own VPC (search VPC in AWS Home searchbox),
 ### 3. Setup your EC2 instance
 1. Connect to your instance using terminal
 
-Input the following command:<br>
+    Input the following command:<br>
 `ssh -i .ssh/RailsAppDemoKey.pem ubuntu@EC2_INSTANCE_IP`<br>
-Substitute the `EC2_INSTANCE_IP` with the public IP adress (or Public DNS).<br>
-Enter `yes` when asked to connect to your instance. If the connection was succesful, you will notice your username will be different - `ubuntu@EC2_INSTANCE_PRIVATE_IP`
+    Substitute the `EC2_INSTANCE_IP` with the public IP adress (or Public DNS).<br>
+    Enter `yes` when asked to connect to your instance. If the connection was succesful, you will notice your username will be different - `ubuntu@EC2_INSTANCE_PRIVATE_IP`
 
     If you get a permission error - check permissions of the RailsAppDemoKey.pem, apply `chmod 400` to that file if necessary.
 > sprawdź czy na pewno to był chmod 400
