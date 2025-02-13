@@ -1,6 +1,16 @@
+### To-do list
+Usunąć AWS CLI i configi<br>
+`pip unistall awscli`<br>
+`rm -rf ~/.aws` (upewnij się czy to zadziała)<br>
+
+Prześledzić tutorial AWSa od początku (konfiguracja AWS CLI, key-pairs, SSH)<br>
+Stworzyć VPC<br>
+
+
+---
+
 ### 1. Setup your AWS account
 1. Create your AWS VPC
-
 
 Create your own VPC (search VPC in AWS Home searchbox),
 > uzupełnić
