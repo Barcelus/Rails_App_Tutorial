@@ -29,10 +29,27 @@ Press **Create security group**, your Security Group is now created
 
 3. Create and configure your AWS account
 
-> uzupełnić jeżeli nie ma usera<br>
-> uzupełnić - stwórz access key
+Go to AWS websiste, then **IAM -> Users**. You should see "Users (0)", you will need to create a new user.<br>
+Press **Create user**, then enter a username (e.g. "user"), then click **Next**.<br>
+Select **Attach policies directly**, then select a policy called **AdministratorAccess**. Click **Next** and then **Create user**.<br>
+
+In the **Users** view, select your created user and go to **Security credential** tab, scroll down and press **Create access key**.<br>
+Select the **Command Line Interface (CLI)** use case, the **Next**<br>
+You may enter a description for that key (e.g. "AWS_CLI_Key"), then press **Create access key**<br>
+Your key has been created - press the **Download .csv file**. Do not lose the secret access key, otherwise you will need to create a new one.<br>
+Open the downloaded .csv file - you will find both Public and Secret access key values inside - these will be needed for the next step.<br>
 
 4. Setup AWS CLI (Command Line Interface)
+
+This section follows instructions found on AWS CLI Getting Started website
+
+Verify if AWS CLI is not installed on your local machine by entering `aws` command - you should get:<br>
+`Command 'aws' not found` (or something similar).<br>
+Install the AWS CLI:<br>
+`snap install aws-cli --classic`, then verify if the installation was succesful by entering `aws --v`.<br>
+
+Next
+
 
 > uzupełnić
 
