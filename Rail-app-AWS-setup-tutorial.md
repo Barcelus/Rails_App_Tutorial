@@ -1,11 +1,6 @@
 ### To-do list
-Usunąć AWS CLI i configi<br>
-`pip unistall awscli`<br>
-`rm -rf ~/.aws` (upewnij się czy to zadziała)<br>
 
-Prześledzić tutorial AWSa od początku (konfiguracja AWS CLI, key-pairs, SSH)<br>
 Stworzyć VPC<br>
-
 
 ---
 
@@ -48,10 +43,13 @@ Verify if AWS CLI is not installed on your local machine by entering `aws` comma
 Install the AWS CLI:<br>
 `snap install aws-cli --classic`, then verify if the installation was succesful by entering `aws --v`.<br>
 
-Next
+Next enter `aws configure`:<br>
+Enter the Access Key ID (from the .csv file - to copy and paste from outside into terminal use **Ctrl+Shift+Insert** and **Shift + Insert** respectively)<br>
+Enter the Secret access key (from the .csv file)<br>
+Enter the default region name - ideally the same region you will launch your EC2 instance in (e.g. "eu-north-1")<br>
+Leave the default output format empty (just press Enter)<br>
 
-
-> uzupełnić
+Verify configuration by entering `aws iam list-users` - you should see your created user, with the username you selected and it's access key ID.
 
 ### 2. Launch an EC2 instance fo your app<br>
 In AWS Home, go to **EC2 -> Instances**. In the upper right corner select a region (e.g. "eu-north-1")<br>
@@ -73,7 +71,7 @@ Instance is operational when it's **Instance state** is ***Running*** and under 
 
 In the next chapter, you will configure your instance to run your Rails app.
 
-### 3. Setup your EC2 instance
+### 3. Setup your EC2 instance<br>
 1. Connect to your instance using terminal
 
 Input the following command:<br>
