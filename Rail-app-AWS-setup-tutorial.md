@@ -1,6 +1,8 @@
 ### To-do list
 
-Stworzyć VPC<br>
+Stworzyć VPC - to chyba nie jest potrzebne<br>
+Install and configure git (zmień kolejność w ###3)
+Install rbenv, ruby and the rest
 
 ---
 
@@ -8,23 +10,25 @@ Stworzyć VPC<br>
 1. Create your AWS VPC
 
 Create your own VPC (search VPC in AWS Home searchbox),
-> uzupełnić
+> najprawdopodobniej niepotrzebne
 
 2. Setup your security group
 
 Go to EC2 -> Security Groups, then select **Create Security Group**<br>
 Input your Secuity Group name and description (e.g. "*Security Group 1*", "*RailsAppDemo*")<br>
+Select VPC created in previous step.<br>
 Under **Inbound Rules** add 3 new rules:
 + Type: **SSH**; Source: **Anywhere IPv4** (leave all other fields as default)
 + Type: **HTTP**; Source: **Anywhere IPv4** (leave all other fields as default)
 + Type: **HTTPS**; Source: **Anywhere IPv4** (leave all other fields as default)<br>
  
-Notice that protocol and port range is selected automatically based on the type of the inbound rule.
+Notice that protocol and port range is selected automatically based on the type of the inbound rule.<br>
+
 Press **Create security group**, your Security Group is now created
 
-3. Create and configure your AWS account
+3. Create and configure your AWS account for AWS Command Line Interface (CLI)
 
-Go to AWS websiste, then **IAM -> Users**. You should see "*Users (0)*", you will need to create a new user.<br>
+Go to IAM -> Users. You should see "*Users (0)*", you will need to create a new user.<br>
 Press **Create user**, then enter a username (e.g. "*user*"), then click **Next**.<br>
 Select **Attach policies directly**, then select a policy called **AdministratorAccess**. Click **Next** and then **Create user**.<br>
 
@@ -56,9 +60,15 @@ Press **Launch instances**:
 + Under **Amazon Machine Image**, select **Ubuntu**, then **Ubuntu 24.04** (or newer)
 + Under **Instance type**, select the free tier eligible instance - usually it will be **t3.micro**
 + Under **Key Pair**, press **Create new key pair**
->	(uzupełnić tworzenie key pair)
+	+ Enter key pair name (e.g. "*RailsAppDemoKey1*")
+	+ Select the **RSA** key pair type
+	+ Select the **.pem** file format
+	+ Create key pair - notice a file has been downloaded on your local machine.
+	+ (optional) Move that file into `~/.ssh` folder
+	+ Modify the key file permission - enter the `.ssh` folder in the terminal and enter command: `chmod 400 RailsAppDemoKey1.pem`
 + Under **Network settings**, (press the **Edit** button):
 	+ Select the VPC created in step 1.1
+> ^wyjebać
 	+ (optional) Select a subnet (e.g. "*eu-north-1****a***")
 	+ Select the security group created in step 1.2
 + Under **Configure storage**, select at least 15GB of memory for your instance
@@ -67,18 +77,18 @@ Leave all other options as default.<br>
 Press the **Launch instance** button. After that, go to **EC2 -> Instances -> Instances** and verify that your instance is launched and running.<br>
 Instance is operational when it's **Instance state** is ***Running*** and under **Status check** there is ***3/3 checks passed***.
 
-In the next chapter, you will configure your instance to run your Rails app.
-
 ### 3. Setup your EC2 instance<br>
 1. Connect to your instance using terminal
 
 Input the following command:<br>
 `ssh -i .ssh/RailsAppDemoKey.pem ubuntu@EC2_INSTANCE_IP`<br>
 Substitute the `EC2_INSTANCE_IP` with the public IP adress (or Public DNS).<br>
-Enter `yes` when asked to connect to your instance. If the connection was succesful, you will notice your username will be different - `ubuntu@EC2_INSTANCE_PRIVATE_IP`
+Enter `yes` when asked to connect to your instance. If the connection was succesful, you will notice your username will be different - `ubuntu@EC2_INSTANCE_PRIVATE_IP`<br>
 
-If you get a permission error - check permissions of the RailsAppDemoKey.pem, apply `chmod 400` to that file if necessary.
-> sprawdź czy na pewno to był chmod 400
+If you want to exit from instance and return to your local machine, enter `exit`<br>
+You can have multiple terminals opened, e.g. one for local machine and one to connect to EC2 instance.
+
+> WIP start
 
 2. Install rbenv
 
