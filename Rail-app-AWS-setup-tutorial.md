@@ -1,7 +1,6 @@
 ### 1. Setup your AWS account
 1. Create your AWS VPC
 
-Create your own VPC (search VPC in AWS Home searchbox),
 > najprawdopodobniej niepotrzebne
 
 2. Setup your security group
@@ -77,3 +76,5 @@ Enter `yes` when asked to connect to your instance. If the connection was succes
 
 If you want to exit from instance and return to your local machine, enter `exit`<br>
 You can have multiple terminals opened, e.g. one for local machine and one to connect to EC2 instance.
+
+(to be continued)
