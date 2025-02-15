@@ -96,6 +96,7 @@ If you want to exit from instance and return to your local machine, enter `exit`
 You can have multiple terminals opened, e.g. one for local machine and one to connect to EC2 instance.
 
 2. Install and configure git<br>
+
 Enter following commands:<br>
 ```
 sudo apt update
@@ -126,6 +127,7 @@ Test the GitHub SSH connection: `ssh -T git@github.com` (enter `yes` where neces
 You should see: `Hi <your-username>! You've successfully authenticated, but GitHub does not provide shell access.`
 
 3. Install rbenv<br>
+
 Clone rbenv repo onto your instance:
 ```
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
@@ -137,42 +139,49 @@ Setup your shell to load rbenv:
 Restart shell (enter `exit` and connect to instance again)<br>
 Verify rbenv is installed correctly by entering: `rbenv -v`
 
-> wyjebać poniżej?
-
-`sudo apt-get update`<br>
-`sudo apt install rbenv`<br>
-> ^to chyba nie działa, install przez git clone
-
 
 `sudo apt-get install autoconf patch build-essential rustc libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libgmp-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev uuid-dev`<br>
 > ^ w którym kroku to potrzebne?
 
 
-3. Install Ruby (using rbenv)
+4. Install Ruby (using rbenv)<br>
 
-`rbenv install 3.3.4`<br>
-`rbenv global 3.3.4`<br>
-`rbenv local 3.3.4`<br>
-`ruby --version`<br>
+Install Ruby version that is used by your app (for this tutorial we'll be using Ruby 3.3.4)
+```
+sudo apt-get install -y build-essential libssl-dev libyaml-dev zlib1g-dev libffi-dev
+rbenv install 3.3.4
+```
+(this step may take few minutes, if it seems stuck, enter `rbenv install 3.3.4 --verbose` and troubleshoot)<br>
+If the `rbenv install` command is not found, install the `ruby-build` plugin:
+```
+git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
+```
+After Ruby has been installed, set the Ruby version on your instance:
+```
+rbenv global 3.3.4
+rbenv local 3.3.4
+```
+Verify Ruby is installed correclty by entering: `ruby -v`<br>
 
-4. Install database - SQLite3
+Install ruby gems:
+```
+gem update --system
+sudo gem install bundler
+```
+Verify installation by entering: `gem env home`<br>
+
+> WIP START
+
+5. Install database - SQLite3
 
 `sudo apt-get update`<br>
 `sudo apt install sqlite3`<br>
 `sqlite3 sharks.db`<br>
 > ^na pewno SQLlite3?
 
-5. Install Rails
+6. Install Rails
 
-6. Install and configure git
-
-`ssh-keygen -t ed255119 -C "barcelus@mths.ca"`<br>
-`git config -global color.ui true`<br>
-`git config --global color.ui true`<br>
-`git config --global user.name "Barcelus"`<br>
-`git config --global user.email "bartlomiejkyziol@gmail.com"`<br>
-`ssh-keygen -t ed25519 -C "bartlomiejkyziol@gmail.com"`<br>
-> sprawdź!!!
+`sudo gem install rails -v 8.0.0
 
 7. Install and configure NGINX
 
