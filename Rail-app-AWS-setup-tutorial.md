@@ -1,9 +1,12 @@
 ### To-do list
 
 Stworzyć VPC - to chyba nie jest potrzebne<br>
-Install and configure git (zmień kolejność w ###3)
-Install rbenv, ruby and the rest
 Verify all this works to get Rails splash
+
+Stylistyka:<br>
++ pozmieniać levele headerów
++ zmienić listy na headery (na pewno?)
++ ogólne poprawki
 
 ---
 
