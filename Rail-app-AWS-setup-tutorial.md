@@ -1,7 +1,13 @@
 ### To-do list
 
-Stworzyć VPC - to chyba nie jest potrzebne<br>
+Stworzyć VPC - (to chyba nie jest potrzebne)<br>
+
 Verify all this works to get Rails splash
+
+Rework:<br>
+All Ruby on Rails setup needs to be moved to section 3 (except NGINX)
+Then add "Repeat section 3.X-X on your EC2 instance"
+On section 5: repeat steps 3.Y-Y to launch and see your app
 
 Stylistyka:<br>
 + pozmieniać levele headerów
@@ -84,6 +90,9 @@ Instance is operational when it's **Instance state** is ***Running*** and under 
 ### 3. Create default Rails app
 
 1. Create Rails app on local machine
+
+2. Verfiy the app is working
+(run Puma and see the app)
 
 2. Create a repository of that app
 
