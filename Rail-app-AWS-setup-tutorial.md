@@ -78,7 +78,13 @@ Leave all other options as default.<br>
 Press the **Launch instance** button. After that, go to **EC2 -> Instances -> Instances** and verify that your instance is launched and running.<br>
 Instance is operational when it's **Instance state** is ***Running*** and under **Status check** there is ***3/3 checks passed***.
 
-### 3. Setup your EC2 instance<br>
+### 3. Create default Rails app
+
+1. Create Rails app on local machine
+
+2. Create a repository of that app
+
+### 4. Setup your EC2 instance<br>
 1. Connect to your instance using terminal
 
 Input the following command:<br>
@@ -90,6 +96,9 @@ If you want to exit from instance and return to your local machine, enter `exit`
 You can have multiple terminals opened, e.g. one for local machine and one to connect to EC2 instance.
 
 > WIP start
+1. Install and configure git
+
+1. Create ssh key for github connection
 
 2. Install rbenv
 
@@ -218,13 +227,16 @@ Remember to input your EC2 public IP adress in the designated place
 
 Remember to modify the nginx.conf file permissions (chmod 777)
 
-### 4. Launch your app
+### 5. Launch your app
 1. Download your app repository from github
 
 2. Launch Puma application server
 
-`bundle exec rails server -b 0.0.0.0`
-> zapisz jak zatrzymać (sigkill) - htop > kill -9 PROCESS_ID_NO
+`bundle exec rails server -b 0.0.0.0`<br>
+> alternatywnie (działa?)<br>
+In `store` folder, enter `bin/rails server`
+> zapisz jak zatrzymać (sigkill) - htop > kill -9 PROCESS_ID_NO<br>
+
 
 3. See your app running
 
