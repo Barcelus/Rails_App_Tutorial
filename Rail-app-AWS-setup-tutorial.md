@@ -95,9 +95,7 @@ Enter `yes` when asked to connect to your instance. If the connection was succes
 If you want to exit from instance and return to your local machine, enter `exit`<br>
 You can have multiple terminals opened, e.g. one for local machine and one to connect to EC2 instance.
 
-> WIP start
-
-1. Install and configure git<br>
+2. Install and configure git<br>
 Enter following commands:<br>
 ```
 sudo apt update
@@ -127,9 +125,19 @@ Press **New SSH key**, enter a key title and paste the key.
 Test the GitHub SSH connection: `ssh -T git@github.com` (enter `yes` where necessary)<br>
 You should see: `Hi <your-username>! You've successfully authenticated, but GitHub does not provide shell access.`
 
+3. Install rbenv<br>
+Clone rbenv repo onto your instance:
+```
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+```
+Setup your shell to load rbenv:
+```
+~/.rbenv/bin/rbenv init
+```
+Restart shell (enter `exit` and connect to instance again)<br>
+Verify rbenv is installed correctly by entering: `rbenv -v`
 
-
-2. Install rbenv
+> wyjebać poniżej?
 
 `sudo apt-get update`<br>
 `sudo apt install rbenv`<br>
