@@ -73,7 +73,7 @@ Verify that git has been installed correctly by entering `git -v`<br>
 
 Set your username and user email:
 ```
-git config --global user.name "YOUR_GITHUB-USERNAME"
+git config --global user.name "YOUR_GITHUB_USERNAME"
 git config --global user.email "YOUR_GITHUB_USER_EMAIL"
 ```
 Verify by: `git config --list`<br>
@@ -158,12 +158,43 @@ Verfiy by: `rails --version`
 
 #### 2.2 Create the Rails app
 
-1. Create Rails app on local machine
+1. Create Rails app on local machine<br>
 
-2. Verfiy the app is working<br>
-(run Puma and see the app)
+Enter: `rails new RailsAppDemo`
+
+After all files have been created, go to `/RailsAppDemo` and create databse for the app:<br>
+`rails db:create`
+
+2. Launch the app and verfiy it is working<br>
+
+Enter `rails server` (while in app directory)<br>
+You should see a Puma server booting. When the server has launched, go to:<br>
+[http://localhost:3000](http://localhost:3000)<br>
+
+You should the Rails splash screen.
 
 3. Create a repository of that app
+
+Go to GitHub and create a new repository (example name: *RailsAppDemo*)<br>
+
+Inside the app directory enter:
+```
+git init
+git add .
+git commit -m "initial commit"
+```
+Then enter:
+```
+git remote add origin https://github.com/YOUR_USERNAME/RailsAppDemo
+git remote set-url origin git@github.com:YOUR_USERNAME/RailsAppDemo
+```
+This will allow to push using SSH.<br>
+Finally, enter:
+```
+git branch -M main
+git push origin main
+```
+Go to your GitHub repository website and check if the repository was pushed correctly.
 
 ### 3. Launch an EC2 instance fo your app<br>
 In AWS Home, go to **EC2 -> Instances**. In the upper right corner select a region (e.g. "*eu-north-1*")<br>
