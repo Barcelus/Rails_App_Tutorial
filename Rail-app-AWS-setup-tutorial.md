@@ -4,11 +4,6 @@ Stworzyć VPC - (to chyba nie jest potrzebne)<br>
 
 Verify all this works to get Rails splash
 
-Rework:<br>
-All Ruby on Rails setup needs to be moved to section 3 (except NGINX)
-Then add "Repeat section 3.X-X on your EC2 instance"
-On section 5: repeat steps 3.Y-Y to launch and see your app
-
 Stylistyka:<br>
 + pozmieniać levele headerów
 + zmienić listy na headery (na pewno?)
@@ -63,51 +58,11 @@ Leave the default output format empty (just press Enter)<br>
 
 Verify configuration by entering `aws iam list-users` - you should see your created user, with the username you selected and it's access key ID.
 
-### 2. Launch an EC2 instance fo your app<br>
-In AWS Home, go to **EC2 -> Instances**. In the upper right corner select a region (e.g. "*eu-north-1*")<br>
-Press **Launch instances**:
-+ Type a name for your instance (e.g."*RailsAppDemo*")
-+ Under **Amazon Machine Image**, select **Ubuntu**, then **Ubuntu 24.04** (or newer)
-+ Under **Instance type**, select the free tier eligible instance - usually it will be **t3.micro**
-+ Under **Key Pair**, press **Create new key pair**
-	+ Enter key pair name (e.g. "*RailsAppDemoKey1*")
-	+ Select the **RSA** key pair type
-	+ Select the **.pem** file format
-	+ Create key pair - notice a file has been downloaded on your local machine.
-	+ (optional) Move that file into `~/.ssh` folder
-	+ Modify the key file permission - enter the `.ssh` folder in the terminal and enter command: `chmod 400 RailsAppDemoKey1.pem`
-+ Under **Network settings**, (press the **Edit** button):
-	+ Select the VPC created in step 1.1
-> ^wyjebać
-	+ (optional) Select a subnet (e.g. "*eu-north-1****a***")
-	+ Select the security group created in step 1.2
-+ Under **Configure storage**, select at least 15GB of memory for your instance
+### 2. Create default Rails app
 
-Leave all other options as default.<br>
-Press the **Launch instance** button. After that, go to **EC2 -> Instances -> Instances** and verify that your instance is launched and running.<br>
-Instance is operational when it's **Instance state** is ***Running*** and under **Status check** there is ***3/3 checks passed***.
+#### 2.1 Create Ruby on Rails environment on your machine<br>
 
-### 3. Create default Rails app
-
-1. Create Rails app on local machine
-
-2. Verfiy the app is working
-(run Puma and see the app)
-
-2. Create a repository of that app
-
-### 4. Setup your EC2 instance<br>
-1. Connect to your instance using terminal
-
-Input the following command:<br>
-`ssh -i .ssh/RailsAppDemoKey.pem ubuntu@EC2_INSTANCE_IP`<br>
-Substitute the `EC2_INSTANCE_IP` with the public IP adress (or Public DNS).<br>
-Enter `yes` when asked to connect to your instance. If the connection was succesful, you will notice your username will be different - `ubuntu@EC2_INSTANCE_PRIVATE_IP`<br>
-
-If you want to exit from instance and return to your local machine, enter `exit`<br>
-You can have multiple terminals opened, e.g. one for local machine and one to connect to EC2 instance.
-
-2. Install and configure git<br>
+1. Install and configure git<br>
 
 Enter following commands:<br>
 ```
@@ -138,7 +93,7 @@ Press **New SSH key**, enter a key title and paste the key.
 Test the GitHub SSH connection: `ssh -T git@github.com` (enter `yes` where necessary)<br>
 You should see: `Hi <your-username>! You've successfully authenticated, but GitHub does not provide shell access.`
 
-3. Install rbenv<br>
+2. Install rbenv<br>
 
 Clone rbenv repo onto your instance:
 ```
@@ -156,7 +111,7 @@ Verify rbenv is installed correctly by entering: `rbenv -v`
 > ^ w którym kroku to potrzebne?
 
 
-4. Install Ruby (using rbenv)<br>
+3. Install Ruby (using rbenv)<br>
 
 Install Ruby version that is used by your app (for this tutorial we'll be using Ruby 3.3.4)
 ```
@@ -182,9 +137,7 @@ sudo gem install bundler
 ```
 Verify installation by entering: `gem env home`<br>
 
-> WIP START
-
-5. Install database - SQLite3
+4. Install database - SQLite3
 
 Enter following:
 ```
@@ -196,14 +149,64 @@ Verify by entering: `sqlite --version`
 sqlite3 sharks.db
 > ^na pewno SQLlite3?
 
-6. Install Rails
+5. Install Rails
 
 For this tutorial we'll using Rails version 8.0.0.<br>
 Enter:<br>
 `sudo gem install rails -v 8.0.0`<br>
 Verfiy by: `rails --version`
 
-7. Install and configure NGINX
+#### 2.2 Create the Rails app
+
+1. Create Rails app on local machine
+
+2. Verfiy the app is working<br>
+(run Puma and see the app)
+
+3. Create a repository of that app
+
+### 3. Launch an EC2 instance fo your app<br>
+In AWS Home, go to **EC2 -> Instances**. In the upper right corner select a region (e.g. "*eu-north-1*")<br>
+Press **Launch instances**:
++ Type a name for your instance (e.g."*RailsAppDemo*")
++ Under **Amazon Machine Image**, select **Ubuntu**, then **Ubuntu 24.04** (or newer)
++ Under **Instance type**, select the free tier eligible instance - usually it will be **t3.micro**
++ Under **Key Pair**, press **Create new key pair**
+	+ Enter key pair name (e.g. "*RailsAppDemoKey1*")
+	+ Select the **RSA** key pair type
+	+ Select the **.pem** file format
+	+ Create key pair - notice a file has been downloaded on your local machine.
+	+ (optional) Move that file into `~/.ssh` folder
+	+ Modify the key file permission - enter the `.ssh` folder in the terminal and enter command: `chmod 400 RailsAppDemoKey1.pem`
++ Under **Network settings**, (press the **Edit** button):
+	+ Select the VPC created in step 1.1
+> ^wyjebać
+	+ (optional) Select a subnet (e.g. "*eu-north-1****a***")
+	+ Select the security group created in step 1.2
++ Under **Configure storage**, select at least 15GB of memory for your instance
+
+Leave all other options as default.<br>
+Press the **Launch instance** button. After that, go to **EC2 -> Instances -> Instances** and verify that your instance is launched and running.<br>
+Instance is operational when it's **Instance state** is ***Running*** and under **Status check** there is ***3/3 checks passed***.
+
+### 4. Setup your EC2 instance<br>
+1. Connect to your instance using terminal
+
+Input the following command:<br>
+`ssh -i .ssh/RailsAppDemoKey.pem ubuntu@EC2_INSTANCE_IP`<br>
+Substitute the `EC2_INSTANCE_IP` with the public IP adress (or Public DNS).<br>
+Enter `yes` when asked to connect to your instance. If the connection was succesful, you will notice your username will be different - `ubuntu@EC2_INSTANCE_PRIVATE_IP`<br>
+
+If you want to exit from instance and return to your local machine, enter `exit`<br>
+You can have multiple terminals opened, e.g. one for local machine and one to connect to EC2 instance.
+
+2. Setup your EC2 environment for Ruby on Rails
+
+Repeats steps from section 2.1
+
+3. Download your app repository from GitHub
+
+4. Install and configure NGINX
 
 NGINX should be already installed on your host, however, verify by running:<br>
 `sudo apt install nginx`<br>
@@ -294,16 +297,16 @@ Remember to input your EC2 public IP adress in the designated place
 Remember to modify the nginx.conf file permissions (chmod 777)
 
 ### 5. Launch your app
-1. Download your app repository from github
-
-2. Launch Puma application server
+1. Launch Puma application server
 
 `bundle exec rails server -b 0.0.0.0`<br>
 > alternatywnie (działa?)<br>
 In `store` folder, enter `bin/rails server`
 > zapisz jak zatrzymać (sigkill) - htop > kill -9 PROCESS_ID_NO<br>
 
-
 3. See your app running
+
+Go to your EC2 Public IP
+See the Rails splash screen.
 
 4. (optional) Setup Public Elastic IP and assing it to your EC2 instance
