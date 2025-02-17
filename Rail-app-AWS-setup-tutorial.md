@@ -106,10 +106,10 @@ Setup your shell to load rbenv:
 Restart shell (enter `exit` and connect to instance again)<br>
 Verify rbenv is installed correctly by entering: `rbenv -v`
 
-
+---
 `sudo apt-get install autoconf patch build-essential rustc libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libgmp-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev uuid-dev`<br>
 > ^ w którym kroku to potrzebne?
-
+---
 
 3. Install Ruby (using rbenv)<br>
 
@@ -145,10 +145,10 @@ sudo apt-get update
 sudo apt install sqlite3
 ```
 Verify by entering: `sqlite --version`
-
+---
 sqlite3 sharks.db
 > ^na pewno SQLlite3?
-
+---
 5. Install Rails
 
 For this tutorial we'll using Rails version 8.0.0.<br>
@@ -211,7 +211,7 @@ Press **Launch instances**:
 	+ Modify the key file permission - enter the `.ssh` folder in the terminal and enter command: `chmod 400 RailsAppDemoKey1.pem`
 + Under **Network settings**, (press the **Edit** button):
 	+ Select the VPC created in step 1.1
-> ^wyjebać
+> ^wyjebać<br>
 	+ (optional) Select a subnet (e.g. "*eu-north-1****a***")
 	+ Select the security group created in step 1.2
 + Under **Configure storage**, select at least 15GB of memory for your instance
@@ -236,14 +236,19 @@ You can have multiple terminals opened, e.g. one for local machine and one to co
 Repeats steps from section 2.1
 
 3. Download your app repository from GitHub
-
+---
+> uzupełnić
+---
 4. Install and configure NGINX
 
 NGINX should be already installed on your host, however, verify by running:<br>
 `sudo apt install nginx`<br>
 After that, go to `/etc/nginx` folder and create a `nginx.conf` file:<br>
 `sudo touch nginx.conf`<br>
-Open that file with a text editor (e.g. vim) and paste the following:
+Open that file with a text editor (e.g. vim) and paste the following:<br>
+---
+> or download the file in this repository
+---
 ```
 user www-data;
 worker_processes auto;
@@ -330,9 +335,10 @@ Remember to modify the nginx.conf file permissions (chmod 777)
 ### 5. Launch your app
 1. Launch Puma application server
 
+`rails server`<br>
+OR<br>
 `bundle exec rails server -b 0.0.0.0`<br>
-> alternatywnie (działa?)<br>
-In `store` folder, enter `bin/rails server`
+
 > zapisz jak zatrzymać (sigkill) - htop > kill -9 PROCESS_ID_NO<br>
 
 3. See your app running
