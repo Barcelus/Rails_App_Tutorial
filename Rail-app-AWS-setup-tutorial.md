@@ -145,10 +145,12 @@ sudo apt-get update
 sudo apt install sqlite3
 ```
 Verify by entering: `sqlite --version`
+
 ---
 sqlite3 sharks.db
 > ^na pewno SQLlite3?
 ---
+
 5. Install Rails
 
 For this tutorial we'll using Rails version 8.0.0.<br>
@@ -210,8 +212,7 @@ Press **Launch instances**:
 	+ (optional) Move that file into `~/.ssh` folder
 	+ Modify the key file permission - enter the `.ssh` folder in the terminal and enter command: `chmod 400 RailsAppDemoKey1.pem`
 + Under **Network settings**, (press the **Edit** button):
-	+ Select the VPC created in step 1.1
-> ^wyjebać<br>
+	+ Select the VPC created in step 1.1 (`WYJEBAĆ`)
 	+ (optional) Select a subnet (e.g. "*eu-north-1****a***")
 	+ Select the security group created in step 1.2
 + Under **Configure storage**, select at least 15GB of memory for your instance
@@ -236,9 +237,11 @@ You can have multiple terminals opened, e.g. one for local machine and one to co
 Repeats steps from section 2.1
 
 3. Download your app repository from GitHub
+
 ---
 > uzupełnić
 ---
+
 4. Install and configure NGINX
 
 NGINX should be already installed on your host, however, verify by running:<br>
@@ -246,9 +249,11 @@ NGINX should be already installed on your host, however, verify by running:<br>
 After that, go to `/etc/nginx` folder and create a `nginx.conf` file:<br>
 `sudo touch nginx.conf`<br>
 Open that file with a text editor (e.g. vim) and paste the following:<br>
+
 ---
 > or download the file in this repository
 ---
+
 ```
 user www-data;
 worker_processes auto;
