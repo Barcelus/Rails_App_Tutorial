@@ -3,6 +3,9 @@
 Stworzyć VPC - (to chyba nie jest potrzebne)<br>
 
 Verify all this works to get Rails splash
+Download RailsAppDemo repo to EC2 (new one), write instructions
+Setup NGINX
+Launch App and see splashscreen -> troubleshoot
 
 Stylistyka:<br>
 + pozmieniać levele headerów
