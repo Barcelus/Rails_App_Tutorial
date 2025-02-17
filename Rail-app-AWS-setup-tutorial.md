@@ -186,18 +186,26 @@ Verify installation by entering: `gem env home`<br>
 
 5. Install database - SQLite3
 
-`sudo apt-get update`<br>
-`sudo apt install sqlite3`<br>
-`sqlite3 sharks.db`<br>
+Enter following:
+```
+sudo apt-get update
+sudo apt install sqlite3
+```
+Verify by entering: `sqlite --version`
+
+sqlite3 sharks.db
 > ^na pewno SQLlite3?
 
 6. Install Rails
 
-`sudo gem install rails -v 8.0.0
+For this tutorial we'll using Rails version 8.0.0.<br>
+Enter:<br>
+`sudo gem install rails -v 8.0.0`<br>
+Verfiy by: `rails --version`
 
 7. Install and configure NGINX
 
-NGINX should be already installed on your host, however, verfity by running:<br>
+NGINX should be already installed on your host, however, verify by running:<br>
 `sudo apt install nginx`<br>
 After that, go to `/etc/nginx` folder and create a `nginx.conf` file:<br>
 `sudo touch nginx.conf`<br>
