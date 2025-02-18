@@ -278,8 +278,10 @@ Instance is operational when it's **Instance state** is ***Running*** and under 
 ### 4. Setup your EC2 instance<br>
 1. Connect to your instance using terminal
 
-Input the following command:<br>
-`ssh -i .ssh/RailsAppDemoKey1.pem ubuntu@EC2_INSTANCE_IP`<br>
+Input the following command:
+```
+ssh -i .ssh/RailsAppDemoKey1.pem ubuntu@EC2_INSTANCE_IP
+```
 Substitute the `EC2_INSTANCE_IP` with the public IP adress (or Public DNS).<br>
 Enter `yes` when asked to connect to your instance. If the connection was succesful, you will notice your username will be different - `ubuntu@EC2_INSTANCE_PRIVATE_IP`<br>
 
