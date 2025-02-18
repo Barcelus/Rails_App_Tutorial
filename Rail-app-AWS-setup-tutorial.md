@@ -2,10 +2,11 @@
 
 Stworzyć VPC - (to chyba nie jest potrzebne)<br>
 
-Verify all this works to get Rails splash
-Download RailsAppDemo repo to EC2 (new one), write instructions
-Setup NGINX
 Launch App and see splashscreen -> troubleshoot
+Troubleshooting:<br>
++ widzę splash nginx, ale nie Rails
++ po repo clone apka nie widzi gemów?
++ po zainstalowania gemów (?) Rails ma wersję 8.0.1, why?
 
 Stylistyka:<br>
 + pozmieniać levele headerów
@@ -361,11 +362,14 @@ chmod 777 nginx.conf
 OR<br>
 `bundle exec rails server -b 0.0.0.0`<br>
 
+---
 > zapisz jak zatrzymać (sigkill) - htop > kill -9 PROCESS_ID_NO<br>
+---
 
 3. See your app running
 
-Go to your EC2 Public IP
-See the Rails splash screen.
+Go to your EC2 Public IP.<br>
+See the Rails splash screen.<br>
+Your nginx.conf file is setup for http connections only.<br>
 
 4. (optional) Setup Public Elastic IP and assing it to your EC2 instance
