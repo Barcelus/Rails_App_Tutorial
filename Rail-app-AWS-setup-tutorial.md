@@ -6,6 +6,9 @@ Launch App and see splashscreen -> troubleshoot
 Troubleshooting:<br>
 + po repo clone apka nie widzi gemów?
 + po zainstalowania gemów (?) Rails ma wersję 8.0.1, why?
+```
+bundle install --gemfile /home/ubuntu/RailsAppDemo/Gemfile
+```
 
 Stylistyka:<br>
 + pozmieniać levele headerów
@@ -359,7 +362,7 @@ chmod 777 nginx.conf
 1. Launch Puma application server
 
 To launch Puma server on EC2, enter (in RailsAppDemo directory):<br>
-`rails server`<br>
+`bin/rails server`<br>
 Or, if above command results in an error:<br>
 `bundle exec rails server -b 0.0.0.0`<br>
 
