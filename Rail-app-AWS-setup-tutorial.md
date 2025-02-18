@@ -302,11 +302,13 @@ The repository will be cloned into your EC2 instance.
 
 4. Install and configure NGINX
 
-NGINX should be already installed on your host, however, verify by running:<br>
-`sudo apt install nginx`<br>
+NGINX should be already installed on your host, however, verify by running:
+```
+sudo apt install nginx
+```
 If NGINX had to be installed, restart your terminal.
 
-After that you will need to create a nginx.conf file. You download this file from this repository and upload it to your EC2 instance using (enter on local):
+After that you will need to create a `nginx.conf` file. You download this file from this repository and upload it to your EC2 instance using (enter on local):
 ```
 scp -i .ssh/RailsAppDemoKey1.pem ~/RailsAppTutorial/nginx.conf ubuntu@YOUR_EC2_IP:~/
 ```
@@ -401,7 +403,8 @@ http {
 
 ```
 **Remember to input your EC2 public IP adress in the designated place**<br>
-In addition, each time you restar your EC2 instance, it will be given a new Public IP adress, which you will need to update in `nginx.conf` file. To circumvent this, you can assing a Public Elastic IP to your instance (see 5.4)
+In addition, each time you restar your EC2 instance, it will be given a new Public IP adress, which you will need to update in `nginx.conf` file.<br>
+To circumvent this, you can assing a Public Elastic IP to your instance (see 5.4)
 
 This file's permissions need to be modified:
 ```
@@ -421,9 +424,13 @@ service nginx status
 1. Launch Puma application server
 
 To launch Puma server on EC2, enter (in RailsAppDemo directory):<br>
-`bin/rails server`<br>
-Or, if above command results in an error:<br>
-`bundle exec rails server -b 0.0.0.0`<br>
+```
+bin/rails server
+```
+Or, if above command results in an error:
+```
+bundle exec rails server -b 0.0.0.0
+```
 
 If Puma server is already running, you will see a message similar to this:
 ```
@@ -444,7 +451,7 @@ Replace `PUMA_PID` with the 5-digit PID from above message.
 
 Go to your EC2 Public IP.<br>
 See the Rails splash screen.<br>
-Your nginx.conf file is setup for http connections only.<br>
+Remember your `nginx.conf` file is setup for http connections only.<br>
 
 4. (optional) Setup Public Elastic IP and assing it to your EC2 instance
 
