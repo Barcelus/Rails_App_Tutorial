@@ -193,17 +193,17 @@ sudo apt install sqlite3
 ```
 Verify by entering: `sqlite --version`
 
----
-sqlite3 sharks.db
-> ^na pewno SQLlite3?
----
-
 5. Install Rails
 
 For this tutorial we'll using Rails version 8.0.0.<br>
-Enter:<br>
-`sudo gem install rails -v 8.0.0`<br>
-Verfiy by: `rails --version`
+Enter:
+```
+sudo gem install rails -v 8.0.0
+```
+Verfiy by:
+```
+rails --version
+```
 
 #### 2.2 Create the Rails app
 
