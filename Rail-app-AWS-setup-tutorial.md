@@ -4,7 +4,6 @@ Stworzyć VPC - (to chyba nie jest potrzebne)<br>
 
 Launch App and see splashscreen -> troubleshoot
 Troubleshooting:<br>
-+ widzę splash nginx, ale nie Rails
 + po repo clone apka nie widzi gemów?
 + po zainstalowania gemów (?) Rails ma wersję 8.0.1, why?
 
@@ -348,7 +347,8 @@ http {
 }
 
 ```
-**Remember to input your EC2 public IP adress in the designated place**
+**Remember to input your EC2 public IP adress in the designated place**<br>
+In addition, each time you restar your EC2 instance, it will be given a new Public IP adress, which you will need to update in `nginx.conf` file. To circumvent this, you can assing a Public Elastic IP to your instance (see 5.4)
 
 This file's permissions need to be modified:
 ```
@@ -358,13 +358,25 @@ chmod 777 nginx.conf
 ### 5. Launch your app
 1. Launch Puma application server
 
+To launch Puma server on EC2, enter (in RailsAppDemo directory):<br>
 `rails server`<br>
-OR<br>
+Or, if above command results in an error:<br>
 `bundle exec rails server -b 0.0.0.0`<br>
 
----
-> zapisz jak zatrzymać (sigkill) - htop > kill -9 PROCESS_ID_NO<br>
----
+If Puma server is already running, you will see a message similar to this:
+```
+=> Booting Puma
+=> Rails 8.0.1 application starting in development 
+=> Run `bin/rails server --help` for more startup options
+A server is already running (pid: 65679, file: /home/ubuntu/RailsAppDemo/tmp/pids/server.pid).
+Exiting
+```
+
+To stop the Puma server, enter:
+```
+kill -9 PUMA_PID
+```
+Replace `PUMA_PID` with the 5-digit PID from above message.
 
 3. See your app running
 
@@ -373,3 +385,5 @@ See the Rails splash screen.<br>
 Your nginx.conf file is setup for http connections only.<br>
 
 4. (optional) Setup Public Elastic IP and assing it to your EC2 instance
+
+TBD
