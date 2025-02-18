@@ -14,6 +14,8 @@ Stylistyka:<br>
 + pozmieniać levele headerów
 + zmienić listy na headery (na pewno?)
 + ogólne poprawki
+	+ After AWS configure, place bullet points list
+	
 
 ---
 
@@ -93,8 +95,10 @@ Enter following commands:<br>
 sudo apt update
 sudo apt install git
 ```
-Verify that git has been installed correctly by entering `git -v`<br>
-
+Verify that git has been installed correctly by entering:
+```
+git -v
+```
 Set your username and user email:
 ```
 git config --global user.name "YOUR_GITHUB_USERNAME"
@@ -114,14 +118,12 @@ Start the SSH agent and add the key:
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
 ```
-Enter:
+Enter the following command and copy the output:
 ```
 cat ~/.ssh/id_rsa.pub
 ```
-Copy the key.
-
 Go to **GitHub**, then to **GitHub settings -> SSH and GPG keys**<br>
-Press **New SSH key**, enter a key title and paste the key.
+Press **New SSH key**, enter a key title and paste the copied output.
 
 Test the GitHub SSH connection:
 ```
