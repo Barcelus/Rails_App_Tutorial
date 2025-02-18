@@ -358,6 +358,15 @@ This file's permissions need to be modified:
 chmod 777 nginx.conf
 ```
 
+Each time you make any changes in the `nginx.conf` file (or any other), you will need to restart NGINX:
+```
+sudo systemctl restart nginx
+```
+Verify that NGINX is running correctly:
+```
+service nginx status
+```
+
 ### 5. Launch your app
 1. Launch Puma application server
 
