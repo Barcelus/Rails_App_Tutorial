@@ -170,14 +170,19 @@ After Ruby has been installed, set the Ruby version on your instance:
 rbenv global 3.3.4
 rbenv local 3.3.4
 ```
-Verify Ruby is installed correclty by entering: `ruby -v`<br>
-
+Verify Ruby is installed correclty by entering:
+```
+ruby -v
+```
 Install ruby gems:
 ```
 gem update --system
 sudo gem install bundler
 ```
-Verify installation by entering: `gem env home`<br>
+Verify installation by entering:
+```
+gem env home
+```
 
 4. Install database - SQLite3
 
