@@ -10,6 +10,8 @@ Troubleshooting:<br>
 bundle install --gemfile /home/ubuntu/RailsAppDemo/Gemfile
 ```
 
+Zmień punkt 1.3 na "create and configure AWS **user** for CLI"
+
 Stylistyka:<br>
 + pozmieniać levele headerów
 + zmienić listy na headery (na pewno?)
