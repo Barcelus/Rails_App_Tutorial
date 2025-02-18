@@ -209,10 +209,14 @@ rails --version
 
 1. Create Rails app on local machine<br>
 
-Enter: `rails new RailsAppDemo`
-
-After all files have been created, go to `/RailsAppDemo` and create databse for the app:<br>
-`rails db:create`
+Enter:
+```
+rails new RailsAppDemo
+```
+After all files have been created, go to `/RailsAppDemo` and create databse for the app:
+```
+rails db:create
+```
 
 2. Launch the app and verfiy it is working<br>
 
