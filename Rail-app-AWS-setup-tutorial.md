@@ -144,12 +144,14 @@ Setup your shell to load rbenv:
 ~/.rbenv/bin/rbenv init
 ```
 Restart shell (enter `exit` and connect to instance again)<br>
-Verify rbenv is installed correctly by entering: `rbenv -v`
-
----
-`sudo apt-get install autoconf patch build-essential rustc libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libgmp-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev uuid-dev`<br>
-> ^ w którym kroku to potrzebne?
----
+Verify rbenv is installed correctly by entering:
+```
+rbenv -v
+```
+Additionally, enter:
+```
+sudo apt-get install autoconf patch build-essential rustc libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libgmp-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev uuid-dev
+```
 
 3. Install Ruby (using rbenv)<br>
 
