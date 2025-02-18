@@ -51,18 +51,36 @@ Open the downloaded .csv file - you will find both Public and Secret access key 
 
 4. Setup AWS CLI (Command Line Interface)
 
-Verify if AWS CLI is not installed on your local machine by entering `aws` command - you should get:<br>
-`Command 'aws' not found` (or something similar).<br>
+Verify if AWS CLI is not installed on your local machine by entering:
+```
+aws
+```
+You should get:
+```
+Command 'aws' not found
+```
 Install the AWS CLI:<br>
-`snap install aws-cli --classic`, then verify if the installation was succesful by entering `aws --v`.<br>
-
-Next enter `aws configure`:<br>
+```
+snap install aws-cli --classic
+```
+Verify if the installation was succesful by entering:
+```
+aws --v
+```
+Next, enter:
+```
+aws configure
+```
 Enter the Access Key ID (from the .csv file - to copy and paste from outside into terminal use **Ctrl+Shift+Insert** and **Shift + Insert** respectively)<br>
 Enter the Secret access key (from the .csv file)<br>
 Enter the default region name - ideally the same region you will launch your EC2 instance in (e.g. "*eu-north-1*")<br>
 Leave the default output format empty (just press Enter)<br>
 
-Verify configuration by entering `aws iam list-users` - you should see your created user, with the username you selected and it's access key ID.
+Verify configuration by entering:
+```
+aws iam list-users
+```
+You should see your created user, with the username you selected and it's access key ID.
 
 ### 2. Create default Rails app
 
