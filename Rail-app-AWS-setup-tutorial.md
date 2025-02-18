@@ -255,17 +255,19 @@ If NGINX had to be installed, restart your terminal.
 
 After that you will need to create a nginx.conf file. You download this file from this repository and upload it to your EC2 instance using (enter on local):
 ```
-scp -i .ssh/RailsAppDemoKey1.pem ~/RailsAppTutorial/nginx.conf ubuntu@YOUR_EC2_IP:home/etc/nginx
+scp -i .ssh/RailsAppDemoKey1.pem ~/RailsAppTutorial/nginx.conf ubuntu@YOUR_EC2_IP:~/
+```
+Then move the file into `/etc/nginx` folder:
+```
+sudo mv ~/nginx.conf /etc/nginx
 ```
 
-After that, go to `/etc/nginx` folder and create a `nginx.conf` file:<br>
-`sudo touch nginx.conf`<br>
+Alternatively, you can create the file from scratch:<br>
+Go to `/etc/nginx` folder and create a `nginx.conf` file:
+```
+sudo touch nginx.conf
+```
 Open that file with a text editor (e.g. vim) and paste the following:<br>
-
----
-> or download the file in this repository
----
-
 ```
 user www-data;
 worker_processes auto;
@@ -345,9 +347,12 @@ http {
 }
 
 ```
-Remember to input your EC2 public IP adress in the designated place
+**Remember to input your EC2 public IP adress in the designated place**
 
-Remember to modify the nginx.conf file permissions (chmod 777)
+This file's permissions need to be modified:
+```
+chmod 777 nginx.conf
+```
 
 ### 5. Launch your app
 1. Launch Puma application server
