@@ -241,14 +241,18 @@ Repeats steps from section 2.1
 
 3. Download your app repository from GitHub
 
----
-> uzupełnić
----
+In the instance home directory enter:
+```
+git clone git@github.com:YOUR_GITHUB_USERNAME/RailsAppDemo
+```
+The repository will be cloned into your EC2 instance.
 
 4. Install and configure NGINX
 
 NGINX should be already installed on your host, however, verify by running:<br>
 `sudo apt install nginx`<br>
+If NGINX had to be installed, restart your terminal.
+
 After that, go to `/etc/nginx` folder and create a `nginx.conf` file:<br>
 `sudo touch nginx.conf`<br>
 Open that file with a text editor (e.g. vim) and paste the following:<br>
