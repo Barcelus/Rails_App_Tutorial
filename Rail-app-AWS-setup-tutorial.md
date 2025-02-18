@@ -220,7 +220,10 @@ rails db:create
 
 2. Launch the app and verfiy it is working<br>
 
-Enter `rails server` (while in app directory)<br>
+Enter (while in RailsAppDemo directory):
+```
+rails server
+```
 You should see a Puma server booting. When the server has launched, go to:<br>
 [http://localhost:3000](http://localhost:3000)<br>
 
