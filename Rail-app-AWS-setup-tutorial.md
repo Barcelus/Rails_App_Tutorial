@@ -15,6 +15,7 @@ Stylistyka:<br>
 + zmienić listy na headery (na pewno?)
 + ogólne poprawki
 	+ After AWS configure, place bullet points list
++ add congratulations or somethin
 
 # Head1
 ## Head2
