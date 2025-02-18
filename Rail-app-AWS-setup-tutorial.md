@@ -228,7 +228,7 @@ Instance is operational when it's **Instance state** is ***Running*** and under 
 1. Connect to your instance using terminal
 
 Input the following command:<br>
-`ssh -i .ssh/RailsAppDemoKey.pem ubuntu@EC2_INSTANCE_IP`<br>
+`ssh -i .ssh/RailsAppDemoKey1.pem ubuntu@EC2_INSTANCE_IP`<br>
 Substitute the `EC2_INSTANCE_IP` with the public IP adress (or Public DNS).<br>
 Enter `yes` when asked to connect to your instance. If the connection was succesful, you will notice your username will be different - `ubuntu@EC2_INSTANCE_PRIVATE_IP`<br>
 
@@ -252,6 +252,11 @@ The repository will be cloned into your EC2 instance.
 NGINX should be already installed on your host, however, verify by running:<br>
 `sudo apt install nginx`<br>
 If NGINX had to be installed, restart your terminal.
+
+After that you will need to create a nginx.conf file. You download this file from this repository and upload it to your EC2 instance using (enter on local):
+```
+scp -i .ssh/RailsAppDemoKey1.pem ~/RailsAppTutorial/nginx.conf ubuntu@YOUR_EC2_IP:home/etc/nginx
+```
 
 After that, go to `/etc/nginx` folder and create a `nginx.conf` file:<br>
 `sudo touch nginx.conf`<br>
