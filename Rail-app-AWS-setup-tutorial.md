@@ -100,22 +100,38 @@ Set your username and user email:
 git config --global user.name "YOUR_GITHUB_USERNAME"
 git config --global user.email "YOUR_GITHUB_USER_EMAIL"
 ```
-Verify by: `git config --list`<br>
-
-Generate a SSH key for GitHub:<br>
-`ssh-keygen -t rsa -b 4096 -C "YOUR_GITHUB_USER_EMAIL"`, then type enter to save the key in default location (`~/.ssh/id_rsa`)<br>
+Verify by:
+```
+git config --list
+```
+Generate a SSH key for GitHub:
+```
+ssh-keygen -t rsa -b 4096 -C "YOUR_GITHUB_USER_EMAIL"
+```
+Then type enter to save the key in default location (`~/.ssh/id_rsa`)<br>
 Start the SSH agent and add the key:
 ```
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
 ```
-Enter `cat ~/.ssh/id_rsa.pub` and copy the key.<br>
+Enter:
+```
+cat ~/.ssh/id_rsa.pub
+```
+Copy the key.
 
 Go to **GitHub**, then to **GitHub settings -> SSH and GPG keys**<br>
 Press **New SSH key**, enter a key title and paste the key.
 
-Test the GitHub SSH connection: `ssh -T git@github.com` (enter `yes` where necessary)<br>
-You should see: `Hi <your-username>! You've successfully authenticated, but GitHub does not provide shell access.`
+Test the GitHub SSH connection:
+```
+ssh -T git@github.com
+```
+Enter `yes` where necessary.<br>
+You should see:
+```
+Hi <your-username>! You've successfully authenticated, but GitHub does not provide shell access.
+```
 
 2. Install rbenv<br>
 
