@@ -13,6 +13,7 @@ bundle install --gemfile /home/ubuntu/RailsAppDemo/Gemfile
 Stylistyka:<br>
 + pozmieniać levele headerów
 + zmienić listy na headery (na pewno?)
+	+ Head2 > Head3 > Head4
 + ogólne poprawki
 	+ After AWS configure, place bullet points list
 + add congratulations or somethin
