@@ -15,6 +15,10 @@ Stylistyka:<br>
 + zmienić listy na headery (na pewno?)
 + ogólne poprawki
 	+ After AWS configure, place bullet points list
+
+# Head1
+## Head2
+### Head3
 	
 
 ---
@@ -130,10 +134,8 @@ Test the GitHub SSH connection:
 ssh -T git@github.com
 ```
 Enter `yes` where necessary.<br>
-You should see:
-```
-Hi <your-username>! You've successfully authenticated, but GitHub does not provide shell access.
-```
+You should see:<br>
+`Hi <your-username>! You've successfully authenticated, but GitHub does not provide shell access.`
 
 2. Install rbenv<br>
 
