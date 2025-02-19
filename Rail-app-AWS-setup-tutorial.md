@@ -27,8 +27,8 @@ Stylistyka:<br>
 
 ---
 
-# 1. Setup your AWS account
-### 1.1 Setup your security group
+## 1. Setup your AWS account
+#### 1.1 Setup your security group
 
 Go to EC2 -> Security Groups, then select **Create Security Group**<br>
 Input your Secuity Group name and description (e.g. "*Security Group 1*", "*RailsAppDemo*")<br>
