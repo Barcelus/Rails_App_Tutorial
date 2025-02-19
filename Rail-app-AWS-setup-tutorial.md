@@ -157,6 +157,9 @@ sudo apt-get install autoconf patch build-essential rustc libssl-dev libyaml-dev
 Install Ruby version that is used by your app (for this tutorial we'll be using Ruby 3.3.4)
 ```
 sudo apt-get install -y build-essential libssl-dev libyaml-dev zlib1g-dev libffi-dev
+```
+After that:
+```
 rbenv install 3.3.4
 ```
 (this step may take few minutes, if it seems stuck, enter `rbenv install 3.3.4 --verbose` and troubleshoot)<br>
@@ -190,7 +193,10 @@ Enter following:
 sudo apt-get update
 sudo apt install sqlite3
 ```
-Verify by entering: `sqlite --version`
+Verify by entering:
+```
+sqlite --version
+```
 
 ##### 2.1.5 Install Rails
 
@@ -263,8 +269,11 @@ Press **Launch instances**:
 	+ Select the **RSA** key pair type
 	+ Select the **.pem** file format
 	+ Create key pair - notice a file has been downloaded on your local machine.
-	+ (optional) Move that file into `~/.ssh` folder
-	+ Modify the key file permission - enter the `.ssh` folder in the terminal and enter command: `chmod 400 RailsAppDemoKey1.pem`
+	+ Move that file into `~/.ssh` folder
+	+ Modify the key file permission - enter the `.ssh` folder in the terminal and enter command:
+```
+chmod 400 RailsAppDemoKey1.pem
+```
 + Under **Network settings**, (press the **Edit** button):
 	+ (optional) Select a subnet (e.g. "*eu-north-1****a***")
 	+ Select the security group created in step 1.1
@@ -280,9 +289,9 @@ Instance is operational when it's **Instance state** is ***Running*** and under 
 
 Input the following command:
 ```
-ssh -i .ssh/RailsAppDemoKey1.pem ubuntu@EC2_INSTANCE_IP
+ssh -i .ssh/RailsAppDemoKey1.pem ubuntu@EC2_INSTANCE_PUBLIC_IP
 ```
-Substitute the `EC2_INSTANCE_IP` with the public IP adress (or Public DNS).<br>
+Substitute the `EC2_INSTANCE_PUBLIC_IP` with the public IP adress (or Public DNS).<br>
 Enter `yes` when asked to connect to your instance. If the connection was succesful, you will notice your username will be different - `ubuntu@EC2_INSTANCE_PRIVATE_IP`<br>
 
 If you want to exit from instance and return to your local machine, enter `exit`<br>
@@ -310,7 +319,7 @@ If NGINX had to be installed, restart your terminal.
 
 After that you will need to create a `nginx.conf` file. You download this file from this repository and upload it to your EC2 instance using (enter on local):
 ```
-scp -i .ssh/RailsAppDemoKey1.pem ~/RailsAppTutorial/nginx.conf ubuntu@YOUR_EC2_IP:~/
+scp -i .ssh/RailsAppDemoKey1.pem ~/RailsAppTutorial/nginx.conf ubuntu@YOUR_EC2_PUBLIC_IP:~/
 ```
 Then move the file into `/etc/nginx` folder:
 ```
@@ -437,14 +446,8 @@ If both result in an error, you might need to install gems again using:
 bundle install --gemfile /home/ubuntu/RailsAppDemo/Gemfile
 ```
 
-If Puma server is already running, you will see a message similar to this:
-```
-=> Booting Puma
-=> Rails 8.0.1 application starting in development 
-=> Run `bin/rails server --help` for more startup options
-A server is already running (pid: 65679, file: /home/ubuntu/RailsAppDemo/tmp/pids/server.pid).
-Exiting
-```
+If Puma server is already running, you will see a message similar to this:<br>
+`A server is already running (pid: 65679, file: /home/ubuntu/RailsAppDemo/tmp/pids/server.pid).`
 
 To stop the Puma server, enter:
 ```
