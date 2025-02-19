@@ -15,7 +15,7 @@ Zmień punkt 1.3 na "create and configure AWS **user** for CLI"
 Stylistyka:<br>
 + pozmieniać levele headerów
 + zmienić listy na headery (na pewno?)
-	+ Head2 > Head3 > Head4
+	+ Head1 > Head3 > Head4
 + ogólne poprawki
 	+ After AWS configure, place bullet points list
 + add congratulations or somethin
@@ -27,7 +27,7 @@ Stylistyka:<br>
 
 ---
 
-## 1. Setup your AWS account
+# 1. Setup your AWS account
 ### 1.1 Setup your security group
 
 Go to EC2 -> Security Groups, then select **Create Security Group**<br>
