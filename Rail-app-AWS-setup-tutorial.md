@@ -37,7 +37,7 @@ Under **Inbound Rules** add 3 new rules:
  
 Notice that protocol and port range is selected automatically based on the type of the inbound rule.<br>
 
-Press **Create security group**, your Security Group is now created
+Press **Create security group**, your Security Group is now created.
 
 #### 1.2 Create and configure your AWS account for AWS Command Line Interface (CLI)
 
@@ -57,10 +57,7 @@ Verify if AWS CLI is not installed on your local machine by entering:
 ```
 aws
 ```
-You should get:
-```
-Command 'aws' not found
-```
+You should get:`Command 'aws' not found`<br>
 Install the AWS CLI:<br>
 ```
 snap install aws-cli --classic
@@ -143,7 +140,9 @@ Setup your shell to load rbenv:
 ```
 ~/.rbenv/bin/rbenv init
 ```
-Restart shell (enter `exit` and connect to instance again)<br>
+Restart the terminal:
++ On local: close and open the terminal window
++ On remote (EC2 instance): enter `exit` and connect to instance again<br>
 Verify rbenv is installed correctly by entering:
 ```
 rbenv -v
