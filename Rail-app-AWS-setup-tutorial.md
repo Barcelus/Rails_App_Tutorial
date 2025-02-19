@@ -1,7 +1,5 @@
 ### To-do list
 
-Stworzyć VPC - (to chyba nie jest potrzebne)<br>
-
 Launch App and see splashscreen -> troubleshoot
 Troubleshooting:<br>
 + po repo clone apka nie widzi gemów?
@@ -10,12 +8,11 @@ Troubleshooting:<br>
 bundle install --gemfile /home/ubuntu/RailsAppDemo/Gemfile
 ```
 
-Zmień punkt 1.3 na "create and configure AWS **user** for CLI"
 
 Stylistyka:<br>
 + pozmieniać levele headerów
 + zmienić listy na headery (na pewno?)
-	+ Head1 > Head3 > Head4
+	+ Head2 > Head4 > Head5 (or no head)
 + ogólne poprawki
 	+ After AWS configure, place bullet points list
 + add congratulations or somethin
@@ -42,7 +39,7 @@ Notice that protocol and port range is selected automatically based on the type 
 
 Press **Create security group**, your Security Group is now created
 
-3. Create and configure your AWS account for AWS Command Line Interface (CLI)
+#### 1.2 Create and configure your AWS account for AWS Command Line Interface (CLI)
 
 Go to IAM -> Users. You should see "*Users (0)*", you will need to create a new user.<br>
 Press **Create user**, then enter a username (e.g. "*user*"), then click **Next**.<br>
@@ -54,7 +51,7 @@ You may enter a description for that key (e.g. "*AWS_CLI_Key*"), then press **Cr
 Your key has been created - press the **Download .csv file**. Do not lose the secret access key, otherwise you will need to create a new one.<br>
 Open the downloaded .csv file - you will find both Public and Secret access key values inside - these will be needed for the next step.<br>
 
-4. Setup AWS CLI (Command Line Interface)
+#### 1.3 Setup AWS CLI (Command Line Interface)
 
 Verify if AWS CLI is not installed on your local machine by entering:
 ```
@@ -87,11 +84,11 @@ aws iam list-users
 ```
 You should see your created user, with the username you selected and it's access key ID.
 
-### 2. Create default Rails app
+## 2. Create default Rails app
 
 #### 2.1 Create Ruby on Rails environment on your machine<br>
 
-1. Install and configure git<br>
+##### 2.1.1 Install and configure git<br>
 
 Enter following commands:<br>
 ```
@@ -136,7 +133,7 @@ Enter `yes` where necessary.<br>
 You should see:<br>
 `Hi <your-username>! You've successfully authenticated, but GitHub does not provide shell access.`
 
-2. Install rbenv<br>
+##### 2.1.2 Install rbenv<br>
 
 Clone rbenv repo onto your instance:
 ```
@@ -156,7 +153,7 @@ Additionally, enter:
 sudo apt-get install autoconf patch build-essential rustc libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libgmp-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev uuid-dev
 ```
 
-3. Install Ruby (using rbenv)<br>
+##### 2.1.3 Install Ruby (using rbenv)<br>
 
 Install Ruby version that is used by your app (for this tutorial we'll be using Ruby 3.3.4)
 ```
@@ -187,7 +184,7 @@ Verify installation by entering:
 gem env home
 ```
 
-4. Install database - SQLite3
+##### 2.1.4 Install database - SQLite3
 
 Enter following:
 ```
@@ -196,7 +193,7 @@ sudo apt install sqlite3
 ```
 Verify by entering: `sqlite --version`
 
-5. Install Rails
+##### 2.1.5 Install Rails
 
 For this tutorial we'll using Rails version 8.0.0.<br>
 Enter:
@@ -210,7 +207,7 @@ rails --version
 
 #### 2.2 Create the Rails app
 
-1. Create Rails app on local machine<br>
+##### 2.2.1 Create Rails app on local machine<br>
 
 Enter:
 ```
@@ -221,7 +218,7 @@ After all files have been created, go to `/RailsAppDemo` and create databse for 
 rails db:create
 ```
 
-2. Launch the app and verfiy it is working<br>
+##### 2.2.2 Launch the app and verfiy it is working<br>
 
 Enter (while in RailsAppDemo directory):
 ```
@@ -232,7 +229,7 @@ You should see a Puma server booting. When the server has launched, go to:<br>
 
 You should the Rails splash screen.
 
-3. Create a repository of that app
+##### 2.2.3 Create a repository of that app
 
 Go to GitHub and create a new repository (example name: *RailsAppDemo*)<br>
 
@@ -255,7 +252,8 @@ git push origin main
 ```
 Go to your GitHub repository website and check if the repository was pushed correctly.
 
-### 3. Launch an EC2 instance fo your app<br>
+## 3. Launch an EC2 instance fo your app
+
 In AWS Home, go to **EC2 -> Instances**. In the upper right corner select a region (e.g. "*eu-north-1*")<br>
 Press **Launch instances**:
 + Type a name for your instance (e.g."*RailsAppDemo*")
@@ -269,17 +267,17 @@ Press **Launch instances**:
 	+ (optional) Move that file into `~/.ssh` folder
 	+ Modify the key file permission - enter the `.ssh` folder in the terminal and enter command: `chmod 400 RailsAppDemoKey1.pem`
 + Under **Network settings**, (press the **Edit** button):
-	+ Select the VPC created in step 1.1 (`WYJEBAĆ`)
 	+ (optional) Select a subnet (e.g. "*eu-north-1****a***")
-	+ Select the security group created in step 1.2
+	+ Select the security group created in step 1.1
 + Under **Configure storage**, select at least 15GB of memory for your instance
 
 Leave all other options as default.<br>
 Press the **Launch instance** button. After that, go to **EC2 -> Instances -> Instances** and verify that your instance is launched and running.<br>
 Instance is operational when it's **Instance state** is ***Running*** and under **Status check** there is ***3/3 checks passed***.
 
-### 4. Setup your EC2 instance<br>
-1. Connect to your instance using terminal
+## 4. Setup your EC2 instance
+
+#### 4.1 Connect to your instance using terminal
 
 Input the following command:
 ```
@@ -291,11 +289,11 @@ Enter `yes` when asked to connect to your instance. If the connection was succes
 If you want to exit from instance and return to your local machine, enter `exit`<br>
 You can have multiple terminals opened, e.g. one for local machine and one to connect to EC2 instance.
 
-2. Setup your EC2 environment for Ruby on Rails
+#### 4.2 Setup your EC2 environment for Ruby on Rails
 
 Repeats steps from section 2.1
 
-3. Download your app repository from GitHub
+#### 4.3 Download your app repository from GitHub
 
 In the instance home directory enter:
 ```
@@ -303,7 +301,7 @@ git clone git@github.com:YOUR_GITHUB_USERNAME/RailsAppDemo
 ```
 The repository will be cloned into your EC2 instance.
 
-4. Install and configure NGINX
+#### 4.4 Install and configure NGINX
 
 NGINX should be already installed on your host, however, verify by running:
 ```
@@ -423,8 +421,9 @@ Verify that NGINX is running correctly:
 service nginx status
 ```
 
-### 5. Launch your app
-1. Launch Puma application server
+## 5. Launch your app
+
+#### 5.1 Launch Puma application server
 
 To launch Puma server on EC2, enter (in RailsAppDemo directory):<br>
 ```
@@ -433,6 +432,10 @@ bin/rails server
 Or, if above command results in an error:
 ```
 bundle exec rails server -b 0.0.0.0
+```
+If both result in an error, you might need to install gems again using:
+```
+bundle install --gemfile /home/ubuntu/RailsAppDemo/Gemfile
 ```
 
 If Puma server is already running, you will see a message similar to this:
@@ -450,12 +453,10 @@ kill -9 PUMA_PID
 ```
 Replace `PUMA_PID` with the 5-digit PID from above message.
 
-3. See your app running
+#### 5.2 See your app running
 
 Go to your EC2 Public IP.<br>
 See the Rails splash screen.<br>
 Remember your `nginx.conf` file is setup for http connections only.<br>
 
-4. (optional) Setup Public Elastic IP and assing it to your EC2 instance
-
-TBD
+### Congratulations, you've finished the tutorial on how to set up a defaul Rails app on an EC2 instance!
