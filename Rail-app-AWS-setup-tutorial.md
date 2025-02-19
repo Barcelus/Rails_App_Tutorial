@@ -31,7 +31,8 @@ Verify if AWS CLI is not installed on your local machine by entering:
 ```
 aws
 ```
-You should get:`Command 'aws' not found`<br>
+You should get:`Command 'aws' not found`
+
 Install the AWS CLI:<br>
 ```
 snap install aws-cli --classic
@@ -116,7 +117,8 @@ Setup your shell to load rbenv:
 ```
 Restart the terminal:
 + On local: close and open the terminal window
-+ On remote (EC2 instance): enter `exit` and connect to instance again<br>
++ On remote (EC2 instance): enter `exit` and connect to instance again
+
 Verify rbenv is installed correctly by entering:
 ```
 rbenv -v
@@ -291,7 +293,7 @@ sudo apt install nginx
 ```
 If NGINX had to be installed, restart your terminal.
 
-After that you will need to create a `nginx.conf` file. You download this file from this repository and upload it to your EC2 instance using (enter on local):
+After that you will need to create a `nginx.conf` file. You download this file from this repository and upload it to your EC2 instance using (enter on local - make sure the file is in the `RailsAppTutorial` directory):
 ```
 scp -i .ssh/RailsAppDemoKey1.pem ~/RailsAppTutorial/nginx.conf ubuntu@YOUR_EC2_PUBLIC_IP:~/
 ```
@@ -387,14 +389,14 @@ http {
 ```
 **Remember to input your EC2 public IP adress in the designated place**<br>
 In addition, each time you restar your EC2 instance, it will be given a new Public IP adress, which you will need to update in `nginx.conf` file.<br>
-To circumvent this, you can assing a Public Elastic IP to your instance (see 5.4)
+To circumvent this, you can assing a Public Elastic IP to your instance (this is a paid feature on AWS).
 
 This file's permissions need to be modified:
 ```
 chmod 777 nginx.conf
 ```
 
-Each time you make any changes in the `nginx.conf` file (or any other), you will need to restart NGINX:
+Each time you make any changes in the `nginx.conf` file (or any other NGINX file), you will need to restart NGINX:
 ```
 sudo systemctl restart nginx
 ```
