@@ -1,29 +1,3 @@
-### To-do list
-
-Launch App and see splashscreen -> troubleshoot
-Troubleshooting:<br>
-+ po repo clone apka nie widzi gemów?
-+ po zainstalowania gemów (?) Rails ma wersję 8.0.1, why?
-```
-bundle install --gemfile /home/ubuntu/RailsAppDemo/Gemfile
-```
-
-
-Stylistyka:<br>
-+ pozmieniać levele headerów
-+ zmienić listy na headery (na pewno?)
-	+ Head2 > Head4 > Head5 (or no head)
-+ ogólne poprawki
-	+ After AWS configure, place bullet points list
-+ add congratulations or somethin
-
-# Head1
-## Head2
-### Head3
-	
-
----
-
 ## 1. Setup your AWS account
 #### 1.1 Setup your security group
 
