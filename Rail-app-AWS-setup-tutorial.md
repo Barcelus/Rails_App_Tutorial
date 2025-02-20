@@ -20,7 +20,7 @@ Press **Create security group**, your Security Group is now created
 3. Create and configure your IAM user for AWS Command Line Interface (CLI)
 
 Go to IAM -> Users. You should see "*Users (0)*", you will need to create a new user.<br>
-Press **Create user**, then enter a username (e.g. "*user*"), then click **Next**.<br>
+Press **Create user**, then enter a username (e.g. "*firstname-lastname*"), then click **Next**.<br>
 Select **Attach policies directly**, then select a policy called **AdministratorAccess**. Click **Next** and then **Create user**.<br>
 
 In the **Users** view, select your created user and go to **Security credential** tab, scroll down and press **Create access key**.<br>
